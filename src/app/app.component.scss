@@ -1,0 +1,6 @@
+body:after {
+  position: absolute;
+  z-index: -1;
+  content: url('/assets/img/logo_noir.png');
+  display: none;
+}

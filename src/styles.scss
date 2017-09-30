@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+$mustard: rgb(255, 201, 21);
+$white: rgb(255, 255, 255);
+$black: rgb(0, 0, 0);
+$blue: rgb(78, 220, 202);
+
+body {
+  margin: 0;
+}
+
+.dot {
+  height: 50px;
+  width: 50px;
+  a {
+    height: 15px;
+    width: 15px;
+    display: block;
+    background-color: black;
+    border-radius: 100%;
+    top: 25px;
+    left: 25px;
+    position: absolute;
+  }
+}
+
+.dot-right {
+  position: absolute;
+  right: 25px;
+  top: 50vh;
+}

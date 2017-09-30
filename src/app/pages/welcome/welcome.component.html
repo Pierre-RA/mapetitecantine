@@ -1,0 +1,9 @@
+<div class="center-image"
+  [@switch]="state"
+  (@switch.done)="changeState($event)">
+  <div class="dot dot-right"
+    (mouseenter)="onBiggerDot()"
+    (mouseleave)="onSmallerDot()">
+    <a [@hover]="dotRight" [routerLink]="['/concept']"></a>
+  </div>
+</div>
