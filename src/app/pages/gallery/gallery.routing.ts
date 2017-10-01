@@ -6,7 +6,8 @@ import { ModuleWithProviders } from '@angular/core';
 export const routes: Routes = [
   {
     path: '',
-    component: GalleryComponent
+    component: GalleryComponent,
+    data: { animation: 'gallery' }
   }
 ];
 

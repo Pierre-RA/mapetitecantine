@@ -81,12 +81,10 @@ export class WelcomeComponent implements OnInit {
   }
 
   onBiggerDot(): void {
-    console.log('in');
     this.dotRight = 'in';
   }
 
   onSmallerDot(): void {
-    console.log('out');
     this.dotRight = 'out';
   }
 

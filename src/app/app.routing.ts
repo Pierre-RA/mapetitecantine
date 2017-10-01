@@ -2,7 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 
 export const routes: Routes = [
-  { path: '', loadChildren: 'app/pages/welcome/welcome.module#WelcomeModule'},
+  { path: '', loadChildren: 'app/pages/welcome/welcome.module#WelcomeModule' },
   { path: 'concept', loadChildren: 'app/pages/concept/concept.module#ConceptModule', pathMatch: 'full' },
   { path: 'menu', loadChildren: 'app/pages/menu/menu.module#MenuModule', pathMatch: 'full' },
   { path: 'gallery', loadChildren: 'app/pages/gallery/gallery.module#GalleryModule', pathMatch: 'full' },

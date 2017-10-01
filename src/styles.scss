@@ -8,6 +8,37 @@ body {
   margin: 0;
 }
 
+.bg-white {
+  background-color: white;
+}
+
+.bg-mustard {
+  background-color: $mustard;
+}
+
+.bg-black {
+  background-color: black;
+  color: white;
+  .menu {
+    a {
+      color: white !important;
+    }
+    a.active {
+      border-color: white !important;
+    }
+  }
+}
+
+.bg-blue {
+  background-color: $blue;
+}
+
+.icon {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
 .dot {
   height: 50px;
   width: 50px;
@@ -23,8 +54,20 @@ body {
   }
 }
 
+.dot-white {
+  a {
+    background-color: white;
+  }
+}
+
 .dot-right {
   position: absolute;
   right: 25px;
+  top: 50vh;
+}
+
+.dot-left {
+  position: absolute;
+  left: 25px;
   top: 50vh;
 }
