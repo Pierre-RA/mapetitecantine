@@ -57,12 +57,25 @@ const right = [
         transform: 'translateX(0%)'
       })
     ),
-  {optional:true}),
+  {optional:true})
 ];
 
 export const slidePage = trigger('routerAnimation', [
+  state('concept', style({
+    backgroundColor: 'white'
+  })),
+  state('menu', style({
+    backgroundColor: 'rgb(78, 220, 202)'
+  })),
+  state('gallery', style({
+    backgroundColor: 'rgb(255, 201, 21)'
+  })),
+  state('contact', style({
+    backgroundColor: 'white',
+    filter: 'invert(100%)'
+  })),
   transition('menu => concept', left),
   transition('gallery => menu', left),
   transition('contact => gallery', left),
-  transition('* <=> *', right),
+  transition('* <=> *', right)
 ]);
