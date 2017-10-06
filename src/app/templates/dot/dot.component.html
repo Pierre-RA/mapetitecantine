@@ -1,0 +1,6 @@
+<div class="dot dot-{{dot.position}}"
+  (mouseenter)="onBiggerDot()"
+  (mouseleave)="onSmallerDot()">
+  <a [@hover]="isBig" [routerLink]="[dot.url]" *ngIf="dot.url"></a>
+  <span [@hover]="isBig" *ngIf="!dot.url"></span>
+</div>

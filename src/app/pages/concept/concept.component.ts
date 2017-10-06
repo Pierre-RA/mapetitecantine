@@ -1,46 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition
-} from '@angular/animations';
+
+import { Image, Dot } from '../../shared';
 
 @Component({
   selector: 'app-concept',
   templateUrl: './concept.component.html',
-  styleUrls: ['./concept.component.scss'],
-  animations: [
-    trigger('hover', [
-      state('in', style({
-        transform: 'scale(3)'
-      })),
-      state('out', style({
-        transform: 'scale(1)'
-      })),
-      transition('out => in', animate('300ms ease-in-out')),
-      transition('in => out', animate('100ms ease-in-out'))
-    ])
-  ]
+  styleUrls: ['./concept.component.scss']
 })
 export class ConceptComponent implements OnInit {
 
-  dotRight: string;
+  image: Image;
+  title: string;
+  color: string;
+  right: Dot;
 
   constructor() {
-    this.dotRight = 'out';
+    this.image = {
+      url: 'assets/img/gobelet_noir.png',
+      title: 'mapetitecantine - Concept',
+      alt: 'concept',
+      type: 'gobelet'
+    };
+    this.title = 'Concept';
+    this.color = 'white';
+    this.right = {
+      url: '/menu',
+      position: 'right'
+    };
   }
 
   ngOnInit() {
-  }
-
-  onBiggerDot(): void {
-    this.dotRight = 'in';
-  }
-
-  onSmallerDot(): void {
-    this.dotRight = 'out';
   }
 
 }

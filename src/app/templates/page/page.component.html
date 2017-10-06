@@ -1,0 +1,26 @@
+<div class="page">
+  <div class="title">
+    <p>
+      ma petite<br />cantine
+    </p>
+  </div>
+  <div class="top">
+    <div class="image image-{{image.type}}">
+      <img src="{{image.url}}" alt="{{image.alt}}" title="{{image.title}}"/>
+    </div>
+    <h1>{{title}}</h1>
+  </div>
+  <div class="bottom" id="bottom">
+    <div class="menu">
+      <a [routerLink]="['/concept']" [routerLinkActive]="['active']">Concept</a>
+      <a [routerLink]="['/menu']" [routerLinkActive]="['active']">Menu</a>
+      <a [routerLink]="['/gallery']" [routerLinkActive]="['active']">Gallerie</a>
+      <a [routerLink]="['/contact']" [routerLinkActive]="['active']">Contact</a>
+    </div>
+    <h1>{{title}}</h1>
+    <ng-content></ng-content>
+    <dot [dot]="bottom" scrollTo scrollTargetSelector="#bottom"></dot>
+    <dot [dot]="right" *ngIf="right"></dot>
+    <dot [dot]="left" *ngIf="left"></dot>
+  </div>
+</div>

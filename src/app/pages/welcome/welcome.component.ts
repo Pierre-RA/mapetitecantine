@@ -7,6 +7,8 @@ import {
   transition
 } from '@angular/animations';
 
+import { Dot } from '../../shared';
+
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
@@ -18,38 +20,23 @@ import {
         filter: 'invert(0%)'
       })),
       state('1', style({
-        backgroundColor: 'rgb(78, 220, 202)',
-        filter: 'invert(0%)'
-      })),
-      state('2', style({
-        backgroundColor: 'rgb(255, 201, 21)',
-        filter: 'invert(0%)'
-      })),
-      state('3', style({
         backgroundColor: 'white',
         filter: 'invert(100%)'
       })),
-    ]),
-    trigger('hover', [
-      state('in', style({
-        transform: 'scale(3)'
-      })),
-      state('out', style({
-        transform: 'scale(1)'
-      })),
-      transition('out => in', animate('300ms ease-in-out')),
-      transition('in => out', animate('100ms ease-in-out'))
     ])
   ]
 })
 export class WelcomeComponent implements OnInit {
 
   state: string;
-  dotRight: string;
+  dotRight: Dot;
 
   constructor() {
     this.state = '0';
-    this.dotRight = 'out';
+    this.dotRight = {
+      url: '/concept',
+      position: 'right'
+    };
   }
 
   ngOnInit() {}
@@ -64,7 +51,7 @@ export class WelcomeComponent implements OnInit {
         break;
       case '1':
         setTimeout(() => {
-          this.state = '2';
+          this.state = '0';
         }, transitionTiming);
         break;
       case '2':
@@ -78,14 +65,6 @@ export class WelcomeComponent implements OnInit {
         }, transitionTiming);
         break;
     }
-  }
-
-  onBiggerDot(): void {
-    this.dotRight = 'in';
-  }
-
-  onSmallerDot(): void {
-    this.dotRight = 'out';
   }
 
 }

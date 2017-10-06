@@ -4,10 +4,13 @@ import { CommonModule } from '@angular/common';
 import { ContactComponent } from './contact.component';
 import { routing } from './contact.routing';
 
+import { PageModule } from '../../templates/page/page.module';
+
 @NgModule({
   imports: [
     CommonModule,
-    routing
+    routing,
+    PageModule
   ],
   declarations: [ContactComponent]
 })

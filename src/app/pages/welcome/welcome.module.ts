@@ -4,10 +4,13 @@ import { CommonModule } from '@angular/common';
 import { WelcomeComponent } from './welcome.component';
 import { routing } from './welcome.routing';
 
+import { DotModule } from '../../templates/dot/dot.module';
+
 @NgModule({
   imports: [
     CommonModule,
-    routing
+    routing,
+    DotModule
   ],
   declarations: [WelcomeComponent]
 })

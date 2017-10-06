@@ -4,10 +4,13 @@ import { CommonModule } from '@angular/common';
 import { ConceptComponent } from './concept.component';
 import { routing } from './concept.routing';
 
+import { PageModule } from '../../templates/page/page.module';
+
 @NgModule({
   imports: [
     CommonModule,
-    routing
+    routing,
+    PageModule
   ],
   declarations: [ConceptComponent]
 })

@@ -1,0 +1,82 @@
+@import '~styles.scss';
+
+.title {
+  background-color: inherit;
+  position: fixed;
+  left: 30px;
+  top: 0px;
+  width: 350px;
+  line-height: 38px;
+  font-size: 38px;
+  z-index: 1;
+  p {
+    margin-top: 30px;
+  }
+}
+
+.top {
+  height: 100vh;
+  .image {
+    @include vertical-align();
+    width: 100vw;
+    z-index: 2;
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .image-gobelet {
+    img {
+      height: 467px;
+    }
+  }
+  .image-pomme {
+    img {
+      height: 425px;
+    }
+  }
+  .image-carotte {
+    img {
+      height: 653px;
+    }
+  }
+  .image-poule {
+    img {
+      height: 530px;
+    }
+  }
+  h1 {
+    position: absolute;
+    left: 30px;
+    bottom: 10px;
+    z-index: 0;
+    font-size: 45pt;
+  }
+}
+
+.bottom {
+  min-height: 100vh;
+  margin-left: 380px;
+  margin-right: 80px;
+  padding-top: 30px;
+  .menu {
+    font-size: 20pt;
+    a {
+      color: black;
+      padding-bottom: 2px;
+      margin-right: 50px;
+    }
+    a:hover,
+    a.active {
+      text-decoration: none;
+      border-bottom: solid 2px black;
+    }
+  }
+  h1 {
+    margin-top: 100px;
+    font-size: 45pt;
+  }
+  p {
+    text-align: justify;
+  }
+}

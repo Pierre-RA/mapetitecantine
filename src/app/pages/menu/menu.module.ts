@@ -4,10 +4,13 @@ import { CommonModule } from '@angular/common';
 import { MenuComponent } from './menu.component';
 import { routing } from './menu.routing';
 
+import { PageModule } from '../../templates/page/page.module';
+
 @NgModule({
   imports: [
     CommonModule,
-    routing
+    routing,
+    PageModule
   ],
   declarations: [MenuComponent]
 })

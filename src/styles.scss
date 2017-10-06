@@ -4,70 +4,31 @@ $white: rgb(255, 255, 255);
 $black: rgb(0, 0, 0);
 $blue: rgb(78, 220, 202);
 
+@font-face {
+  font-family: 'PlainMed';
+  src: url('/assets/fonts/Plain-Medium.ttf');
+}
+
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+html,
+body {
+  height: 100vh;
+}
+
 body {
   margin: 0;
-}
-
-.bg-white {
-  background-color: white;
-}
-
-.bg-mustard {
-  background-color: $mustard;
-}
-
-.bg-black {
-  background-color: black;
-  color: white;
-  .menu {
-    a {
-      color: white !important;
-    }
-    a.active {
-      border-color: white !important;
-    }
-  }
-}
-
-.bg-blue {
-  background-color: $blue;
+  font-family: 'PlainMed', sans-serif;
 }
 
 .icon {
   position: absolute;
   bottom: 20px;
   left: 20px;
-}
-
-.dot {
-  height: 50px;
-  width: 50px;
-  a {
-    height: 15px;
-    width: 15px;
-    display: block;
-    background-color: black;
-    border-radius: 100%;
-    top: 25px;
-    left: 25px;
-    position: absolute;
-  }
-}
-
-.dot-white {
-  a {
-    background-color: white;
-  }
-}
-
-.dot-right {
-  position: absolute;
-  right: 25px;
-  top: 50vh;
-}
-
-.dot-left {
-  position: absolute;
-  left: 25px;
-  top: 50vh;
 }
