@@ -1,5 +1,7 @@
 <div class="center-image"
-  [@switch]="state"
-  (@switch.done)="changeState($event)">
-  <dot [dot]="dotRight"></dot>
+  [@switch]="state">
+  <dot [dot]="dotRight"
+    (mouseenter)="switchImage()"
+    (mouseleave)="switchImage()">
+  </dot>
 </div>

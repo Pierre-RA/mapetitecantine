@@ -15,11 +15,11 @@ import { Dot } from '../../shared';
   styleUrls: ['./welcome.component.scss'],
   animations: [
     trigger('switch', [
-      state('0', style({
+      state('white', style({
         backgroundColor: 'white',
         filter: 'invert(0%)'
       })),
-      state('1', style({
+      state('black', style({
         backgroundColor: 'white',
         filter: 'invert(100%)'
       })),
@@ -32,7 +32,7 @@ export class WelcomeComponent implements OnInit {
   dotRight: Dot;
 
   constructor() {
-    this.state = '0';
+    this.state = 'white';
     this.dotRight = {
       url: '/concept',
       position: 'right'
@@ -41,30 +41,8 @@ export class WelcomeComponent implements OnInit {
 
   ngOnInit() {}
 
-  changeState(event): void {
-    const transitionTiming = 1000;
-    switch (event.toState) {
-      case '0':
-        setTimeout(() => {
-          this.state = '1';
-        }, transitionTiming);
-        break;
-      case '1':
-        setTimeout(() => {
-          this.state = '0';
-        }, transitionTiming);
-        break;
-      case '2':
-        setTimeout(() => {
-          this.state = '3';
-        }, transitionTiming);
-        break;
-      case '3':
-        setTimeout(() => {
-          this.state = '0';
-        }, transitionTiming);
-        break;
-    }
+  switchImage(): void {
+    this.state = this.state == 'white' ? 'black' : 'white';
   }
 
 }
