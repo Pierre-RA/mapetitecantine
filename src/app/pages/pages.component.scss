@@ -14,7 +14,7 @@
   }
 }
 
-.bottom {
+.content-wrapper {
   min-height: 100vh;
   margin-left: 380px;
   margin-right: 80px;
@@ -33,6 +33,12 @@
   }
 }
 
+.content {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
 .outlet {
   z-index: 1;
+  padding-bottom: 1rem;
 }
