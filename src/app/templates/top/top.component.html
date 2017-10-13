@@ -5,7 +5,7 @@
 </div>
 <div class="top">
   <div class="image image-{{image.type}}" *ngIf="image">
-    <img src="{{image.url}}" alt="{{image.alt}}" title="{{image.title}}"/>
+    <img src="{{image.url}}" alt="{{image.alt}}" title="{{image.title}}" (click)="goToLink()" />
   </div>
   <h1>{{title}}</h1>
 </div>
