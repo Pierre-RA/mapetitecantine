@@ -27,8 +27,20 @@ export const slideContentPages = trigger('routerAnimation', [
     backgroundColor: 'white',
     filter: 'invert(100%)'
   })),
-  transition('menu => concept', animate('.5s ease-out', slideLeft)),
-  transition('gallery => menu', animate('.5s ease-out', slideLeft)),
-  transition('contact => gallery', animate('.5s ease-out', slideLeft)),
-  transition('* <=> *', animate('.5s ease-out', slideRight))
+  transition('void => *', style({})),
+  transition('menu => concept', [
+    query('.outlet', animate('.5s ease-out', slideLeft)),
+  ]),
+  transition('gallery => menu', [
+    query('.outlet', animate('.5s ease-out', slideLeft))
+  ]),
+  transition('gallery => concept', [
+    query('.outlet', animate('.5s ease-out', slideLeft))
+  ]),
+  transition('contact => *', [
+    query('.outlet', animate('.5s ease-out', slideLeft))
+  ]),
+  transition('* <=> *', [
+    query('.outlet', animate('.5s ease-out', slideRight))
+  ])
 ]);

@@ -88,7 +88,6 @@ export class WelcomeComponent implements OnInit {
   goTo(direction: string): void {
     localStorage.setItem('initial-transition', direction);
     this.transition = direction;
-    console.log(direction);
   }
 
 }

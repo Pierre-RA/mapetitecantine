@@ -2,15 +2,18 @@ import { trigger, state, style, transition, animate, query } from '@angular/anim
 
 const slideLeft = style({
   transform: 'translateX(100%)',
-  display: 'none'
+  display: 'none',
+  zIndex: '1'
 });
 const slideRight = style({
   transform: 'translateX(-100%)',
-  display: 'none'
+  display: 'none',
+  zIndex: '1'
 });
 const slideDown = style({
   transform: 'translateY(-100%)',
-  display: 'none'
+  display: 'none',
+  zIndex: '1'
 });
 
 export const slidePage = trigger('slide', [
@@ -28,8 +31,19 @@ export const slidePage = trigger('slide', [
     filter: 'invert(100%)'
   })),
   transition('void => *', style({})),
-  transition('menu => concept', animate('.5s ease-out', slideLeft)),
-  transition('gallery => menu', animate('.5s ease-out', slideLeft)),
-  transition('contact => gallery', animate('.5s ease-out', slideLeft)),
-  transition('* <=> *', animate('.5s ease-out', slideRight))
+  transition('menu => concept', [
+    query('.outlet', animate('.5s ease-out', slideLeft)),
+  ]),
+  transition('gallery => menu', [
+    query('.outlet', animate('.5s ease-out', slideLeft))
+  ]),
+  transition('gallery => concept', [
+    query('.outlet', animate('.5s ease-out', slideLeft))
+  ]),
+  transition('contact => *', [
+    query('.outlet', animate('.5s ease-out', slideLeft))
+  ]),
+  transition('* <=> *', [
+    query('.outlet', animate('.5s ease-out', slideRight))
+  ])
 ]);

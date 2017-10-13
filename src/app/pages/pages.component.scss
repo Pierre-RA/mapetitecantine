@@ -1,13 +1,15 @@
 .title {
   background-color: inherit;
   position: fixed;
-  left: 30px;
+  left: 0px;
   top: 0px;
-  width: 350px;
+  width: 380px;
   line-height: 45pt;
   font-size: 45pt;
-  z-index: 1;
+  z-index: 100;
+  height: 100vh;
   p {
+    margin-left: 30px;
     margin-top: 30px;
   }
 }
@@ -29,4 +31,8 @@
       border-bottom: solid 2px black;
     }
   }
+}
+
+.outlet {
+  z-index: 1;
 }
