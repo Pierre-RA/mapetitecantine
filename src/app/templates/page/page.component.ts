@@ -1,4 +1,6 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Inject } from '@angular/core';
+import { DOCUMENT} from '@angular/common';
+import { PageScrollConfig, PageScrollService, PageScrollInstance } from 'ng2-page-scroll';
 
 import { Image, Dot } from '../../shared';
 
@@ -17,13 +19,23 @@ export class PageComponent implements OnInit {
   @ViewChild('target') target: any;
   bottom: Dot;
 
-  constructor() {
+  constructor(
+    private pageScrollService: PageScrollService,
+    @Inject(DOCUMENT) private document: any
+  ) {
     this.bottom = {
       position: 'bottom'
     };
+    PageScrollConfig.defaultDuration = 500;
   }
 
   ngOnInit() {
+  }
+
+  goToBottom() {
+    let pageScrollInstance: PageScrollInstance =
+      PageScrollInstance.simpleInstance(this.document, '#bottom');
+    this.pageScrollService.start(pageScrollInstance);
   }
 
 }

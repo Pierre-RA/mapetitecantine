@@ -13,7 +13,7 @@ const slideDown = style({
   display: 'none'
 });
 
-export const slidePage = trigger('slide', [
+export const slideContentPages = trigger('routerAnimation', [
   state('concept', style({
     backgroundColor: 'white'
   })),
@@ -27,7 +27,6 @@ export const slidePage = trigger('slide', [
     backgroundColor: 'white',
     filter: 'invert(100%)'
   })),
-  transition('void => *', style({})),
   transition('menu => concept', animate('.5s ease-out', slideLeft)),
   transition('gallery => menu', animate('.5s ease-out', slideLeft)),
   transition('contact => gallery', animate('.5s ease-out', slideLeft)),

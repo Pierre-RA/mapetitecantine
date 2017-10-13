@@ -1,0 +1,19 @@
+<div class="above" [@routerAnimation]="getRouteAnimation(route)">
+  <div class="title">
+    <p>
+      ma petite<br />cantine
+    </p>
+  </div>
+
+  <div class="bottom" id="bottom">
+    <div class="menu">
+      <a [routerLink]="['/pages/concept']" [routerLinkActive]="['active']">Concept</a>
+      <a [routerLink]="['/pages/menu']" [routerLinkActive]="['active']">Menu</a>
+      <a [routerLink]="['/pages/gallery']" [routerLinkActive]="['active']">Galerie</a>
+      <a [routerLink]="['/pages/contact']" [routerLinkActive]="['active']">Contact</a>
+    </div>
+    <div class="outlet">
+      <router-outlet #route="outlet"></router-outlet>
+    </div>
+  </div>
+</div>

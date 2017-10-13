@@ -5,12 +5,14 @@ import { WelcomeComponent } from './welcome.component';
 import { routing } from './welcome.routing';
 
 import { DotModule } from '../../templates/dot/dot.module';
+import { TopModule } from '../../templates/top/top.module';
 
 @NgModule({
   imports: [
     CommonModule,
     routing,
-    DotModule
+    DotModule,
+    TopModule
   ],
   declarations: [WelcomeComponent]
 })

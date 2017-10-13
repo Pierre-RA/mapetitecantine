@@ -1,0 +1,14 @@
+<div class="title">
+  <p>
+    ma petite<br />cantine
+  </p>
+</div>
+<div class="top">
+  <div class="image image-{{image.type}}" *ngIf="image">
+    <img src="{{image.url}}" alt="{{image.alt}}" title="{{image.title}}"/>
+  </div>
+  <h1>{{title}}</h1>
+</div>
+
+<dot [dot]="bottomDot"></dot>
+<ng-content></ng-content>

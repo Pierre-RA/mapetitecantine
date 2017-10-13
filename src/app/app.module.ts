@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { ScrollToModule } from 'ng2-scroll-to';
+import { Ng2PageScrollModule } from 'ng2-page-scroll';
 
+import { PagesModule } from './pages/pages.module';
 import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 
@@ -13,8 +14,9 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    Ng2PageScrollModule.forRoot(),
     routing,
-    ScrollToModule.forRoot(),
+    PagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

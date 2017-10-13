@@ -1,0 +1,32 @@
+.title {
+  background-color: inherit;
+  position: fixed;
+  left: 30px;
+  top: 0px;
+  width: 350px;
+  line-height: 45pt;
+  font-size: 45pt;
+  z-index: 1;
+  p {
+    margin-top: 30px;
+  }
+}
+
+.bottom {
+  min-height: 100vh;
+  margin-left: 380px;
+  margin-right: 80px;
+  padding-top: 30px;
+  .menu {
+    a {
+      color: black;
+      padding-bottom: 2px;
+      margin-right: 50px;
+    }
+    a:hover,
+    a.active {
+      text-decoration: none;
+      border-bottom: solid 2px black;
+    }
+  }
+}
