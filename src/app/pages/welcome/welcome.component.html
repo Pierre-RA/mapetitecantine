@@ -1,7 +1,57 @@
-<div class="center-image"
-  [@switch]="state">
-  <dot [dot]="dotRight"
-    (mouseenter)="switchImage()"
-    (mouseleave)="switchImage()">
-  </dot>
+<div [@slide]="transition">
+  <div class="center-image"
+    [@switch]="state"
+    *ngIf="transition == 'logo'">
+    <dot [dot]="dotRight"
+      (mouseenter)="switchImage()"
+      (mouseleave)="switchImage()"
+      (click)="goTo('concept')">
+    </dot>
+  </div>
+
+  <template-top
+    *ngIf="transition == 'concept'"
+    [bottom]="'/pages/concept'"
+    [title]="Concept"
+    [image]="conceptImage">
+    <dot [dot]="dotRight"
+      (click)="goTo('menu')">
+    </dot>
+  </template-top>
+
+  <template-top
+    *ngIf="transition == 'menu'"
+    [bottom]="'/pages/menu'"
+    [title]="Menu"
+    [image]="menuImage">
+    <dot [dot]="dotLeft"
+      (click)="goTo('concept')">
+    </dot>
+    <dot [dot]="dotRight"
+      (click)="goTo('gallery')">
+    </dot>
+  </template-top>
+
+  <template-top
+    *ngIf="transition == 'gallery'"
+    [bottom]="'/pages/gallery'"
+    [title]="Galerie"
+    [image]="galleryImage">
+    <dot [dot]="dotLeft"
+      (click)="goTo('menu')">
+    </dot>
+    <dot [dot]="dotRight"
+      (click)="goTo('contact')">
+    </dot>
+  </template-top>
+
+  <template-top
+    *ngIf="transition == 'contact'"
+    [bottom]="'/pages/contact'"
+    [title]="Contact"
+    [image]="contactImage">
+    <dot [dot]="dotLeft"
+      (click)="goTo('gallery')">
+    </dot>
+  </template-top>
 </div>

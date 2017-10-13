@@ -24,7 +24,7 @@ export class ConceptComponent implements OnInit {
     this.title = 'Concept';
     this.color = 'white';
     this.right = {
-      url: '/menu',
+      url: '/pages/menu',
       position: 'right'
     };
   }

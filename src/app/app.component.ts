@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { slidePage } from './animations/slide-page';
+import { slidePage } from './animations/router-animation';
 
 @Component({
   selector: 'app-root',

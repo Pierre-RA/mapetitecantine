@@ -24,7 +24,7 @@ export class ContactComponent implements OnInit {
     this.title = 'Contact';
     this.color = 'black';
     this.left = {
-      url: '/gallery',
+      url: '/pages/gallery',
       position: 'left'
     };
   }

@@ -3395,9 +3395,9 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
-ng2-scroll-to@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/ng2-scroll-to/-/ng2-scroll-to-1.0.7.tgz#b86380c176d911e22a710e68db1a13f9c073481e"
+ng2-page-scroll@^4.0.0-beta.11:
+  version "4.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/ng2-page-scroll/-/ng2-page-scroll-4.0.0-beta.11.tgz#9f78da80d44f368e1f4e4dd770136c60d77facfe"
 
 no-case@^2.2.0:
   version "2.3.2"

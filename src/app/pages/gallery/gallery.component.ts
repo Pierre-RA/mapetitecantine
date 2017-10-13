@@ -24,11 +24,11 @@ export class GalleryComponent implements OnInit {
     this.title = 'Galerie';
     this.color = 'mustard';
     this.left = {
-      url: '/menu',
+      url: '/pages/menu',
       position: 'left'
     };
     this.right = {
-      url: '/contact',
+      url: '/pages/contact',
       position: 'right'
     };
   }

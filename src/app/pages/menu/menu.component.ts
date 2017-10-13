@@ -25,11 +25,11 @@ export class MenuComponent implements OnInit {
     this.title = 'Menu';
     this.color = 'blue';
     this.left = {
-      url: '/concept',
+      url: '/pages/concept',
       position: 'left'
     };
     this.right = {
-      url: '/gallery',
+      url: '/pages/gallery',
       position: 'right'
     };
   }
