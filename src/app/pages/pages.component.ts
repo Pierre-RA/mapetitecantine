@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { slideContentPages } from '../animations/slide-content-pages';
 
@@ -6,19 +7,19 @@ import { slideContentPages } from '../animations/slide-content-pages';
   selector: 'app-pages',
   templateUrl: './pages.component.html',
   styleUrls: ['./pages.component.scss'],
-  animations: [slideContentPages],
 })
 export class PagesComponent implements OnInit {
 
-  constructor() {
+  color: string;
+
+  constructor(
+    private activatedRoute: ActivatedRoute
+  ) {
     localStorage.removeItem('initial-transition');
+    this.color = 'white';
   }
 
   ngOnInit() {
-  }
-
-  getRouteAnimation(outlet) {
-    return outlet.activatedRouteData.animation;
   }
 
 }
