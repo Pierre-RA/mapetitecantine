@@ -9,10 +9,10 @@
       ma petite<br />cantine
     </p>
     <div class="menu">
-      <a [routerLink]="['/pages/concept']" [routerLinkActive]="['active']">Concept</a>
-      <a [routerLink]="['/pages/menu']" [routerLinkActive]="['active']">Menu</a>
-      <a [routerLink]="['/pages/gallery']" [routerLinkActive]="['active']">Galerie</a>
-      <a [routerLink]="['/pages/contact']" [routerLinkActive]="['active']">Contact</a>
+      <a pageScroll href="#concept" [ngClass]="{'active': color == 'white'}">Concept</a>
+      <a pageScroll href="#menu" [ngClass]="{'active': color == 'blue'}">Menu</a>
+      <a pageScroll href="#gallery" [ngClass]="{'active': color == 'mustard'}">Galerie</a>
+      <a pageScroll href="#contact" [ngClass]="{'active': color == 'black'}">Contact</a>
     </div>
     <div class="right">
       <a href="#" target="_blank">
@@ -36,8 +36,8 @@
     </div>
   </div>
 
-  <div class="content-wrapper header-{{fixed}}">
-    <div class="content">
+  <div class="content-wrapper">
+    <div class="content" #concept id="concept">
       <h1>Concept</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -47,7 +47,7 @@
       </p>
     </div>
 
-    <div class="content menu blue">
+    <div class="content menu blue" #menu id="menu">
       <h1>Menu</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -57,18 +57,49 @@
       </p>
     </div>
 
-    <div class="content gallery mustard">
+    <div class="content gallery mustard" #gallery id="gallery">
       <h1>Galerie</h1>
-      <div class="image">
-        <img src="http://via.placeholder.com/520x340" alt="520x340" title="galerie" />
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="image">
+            <img src="http://via.placeholder.com/520x340" alt="520x340" title="galerie" />
+          </div>
+          <p>
+            Vernissage<br />
+            4 octobre 2017
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <div class="image">
+            <img src="http://via.placeholder.com/520x340" alt="520x340" title="galerie" />
+          </div>
+          <p>
+            Vernissage<br />
+            4 octobre 2017
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <div class="image">
+            <img src="http://via.placeholder.com/520x340" alt="520x340" title="galerie" />
+          </div>
+          <p>
+            Vernissage<br />
+            4 octobre 2017
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <div class="image">
+            <img src="http://via.placeholder.com/520x340" alt="520x340" title="galerie" />
+          </div>
+          <p>
+            Vernissage<br />
+            4 octobre 2017
+          </p>
+        </div>
       </div>
-      <p>
-        Vernissage<br />
-        4 octobre 2017
-      </p>
     </div>
 
-    <div class="content contact black">
+    <div class="content contact black" #contact id="contact">
       <h1>Contact</h1>
       <div class="image">
         <img src="http://via.placeholder.com/520x340" alt="520x340" title="galerie" />
