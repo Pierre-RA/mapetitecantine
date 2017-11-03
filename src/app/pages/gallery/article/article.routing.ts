@@ -1,13 +1,13 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { MenuComponent } from './menu.component';
+import { ArticleComponent } from './article.component';
 import { ModuleWithProviders } from '@angular/core';
 
 export const routes: Routes = [
   {
     path: '',
-    component: MenuComponent,
-    data: { animation: 'menu' }
+    component: ArticleComponent,
+    data: { animation: 'welcome' }
   }
 ];
 

@@ -1,0 +1,31 @@
+.content-wrapper {
+  .content {
+    min-height: 100vh;
+    padding-left: 380px;
+    padding-top: 196px;
+    padding-right: 35px;
+    padding-bottom: 196px;
+  }
+}
+
+.gallery {
+  .image {
+    width: 100vw;
+    margin-left: -380px;
+    height: 30vh;
+    margin-bottom: 20px;
+    background-size: cover;
+  }
+  .image-container {
+    margin: 10px;
+    cursor: pointer;
+  }
+
+  .links {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    a {
+      color: black;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { PageScrollConfig } from 'ng2-page-scroll';
 
 import { Dot, Image } from '../../shared';
@@ -17,13 +18,19 @@ export class WelcomeComponent implements OnInit {
   @ViewChild('gallery') galleryElement;
   @ViewChild('contact') contactElement;
 
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
     this.fixed = '';
     this.color = 'white';
     PageScrollConfig.defaultDuration = 500;
   }
 
   ngOnInit() {}
+
+  goTo(link: string) {
+    this.router.navigate(['/galerie', link]);
+  }
 
   @HostListener("window:scroll", ["$event"])
   onWindowScroll() {

@@ -74,13 +74,28 @@
     padding-left: 380px;
     padding-top: 196px;
     padding-right: 35px;
-    padding-bottom: 1rem;
+    padding-bottom: 196px;
   }
 }
 
 .gallery {
+  position: relative;
   .image {
-    margin: 20px 0;
+    margin-top: 0;
+  }
+  .image-container {
+    margin: 10px;
+    cursor: pointer;
+  }
+  .right-links {
+    position: absolute;
+    top: 196px;
+    left: 0;
+    width: 900px;
+    text-align: right;
+    a {
+      color: black;
+    }
   }
 }
 

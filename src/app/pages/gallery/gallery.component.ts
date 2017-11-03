@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Image, Dot } from '../../shared';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-gallery',
@@ -8,33 +7,19 @@ import { Image, Dot } from '../../shared';
   styleUrls: ['./gallery.component.scss'],
 })
 export class GalleryComponent implements OnInit {
-  image: Image;
-  title: string;
   color: string;
-  left: Dot;
-  right: Dot;
 
-  constructor() {
-    this.image = {
-      url: 'assets/img/carotte_noir.png',
-      title: 'mapetitecantine - Galerie',
-      alt: 'galerie',
-      type: 'carotte'
-    };
-    this.title = 'Galerie';
-    this.color = 'mustard';
-    this.left = {
-      url: '/pages/menu',
-      position: 'left'
-    };
-    this.right = {
-      url: '/pages/contact',
-      position: 'right'
-    };
+  constructor(
+    private activatedRoute: ActivatedRoute
+  ) {
+    this.color = 'white';
   }
 
   ngOnInit() {
+  }
 
+  onActivate(event) {
+    this.color = event.getColor();
   }
 
 }

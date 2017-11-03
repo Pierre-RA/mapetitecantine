@@ -1,13 +1,13 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { ConceptComponent } from './concept.component';
+import { ListComponent } from './list.component';
 import { ModuleWithProviders } from '@angular/core';
 
 export const routes: Routes = [
   {
     path: '',
-    component: ConceptComponent,
-    data: { animation: 'concept' }
+    component: ListComponent,
+    data: { animation: 'welcome' }
   }
 ];
 

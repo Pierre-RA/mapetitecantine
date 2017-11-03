@@ -1,9 +1,37 @@
-<template-page [image]="image" [title]="title" [color]="color">
-  <div class="image">
-    <img src="http://via.placeholder.com/520x340" alt="520x340" title="galerie" />
+<div>
+  <div class="header fixed {{color}}">
+    <p>
+      ma petite<br />cantine
+    </p>
+    <div class="menu">
+      <a pageScroll [routerLink]="['']" href="#concept">Concept</a>
+      <a pageScroll [routerLink]="['']" href="#menu">Menu</a>
+      <a pageScroll [routerLink]="['/galerie']" class="active">Galerie</a>
+      <a pageScroll [routerLink]="['']" href="#contact">Contact</a>
+    </div>
+    <div class="right">
+      <a href="#" target="_blank">
+        <span class="fa-stack">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+      <a href="#" target="_blank">
+        <span class="fa-stack">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+      <a href="#" target="_blank">
+        <span class="fa-stack">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+    </div>
   </div>
-  <p>
-    Vernissage<br />
-    4 octobre 2017
-  </p>
-</template-page>
+
+  <div class="content-wrapper">
+    <router-outlet (activate)="onActivate($event)"></router-outlet>
+  </div>
+</div>

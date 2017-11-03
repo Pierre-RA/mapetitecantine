@@ -3,8 +3,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
 
-import { PagesModule } from './pages/pages.module';
 import { routing } from './app.routing';
+import { GalleryModule } from './pages/gallery/gallery.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -16,7 +16,7 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     Ng2PageScrollModule.forRoot(),
     routing,
-    PagesModule
+    GalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

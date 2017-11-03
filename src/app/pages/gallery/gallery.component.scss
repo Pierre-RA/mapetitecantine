@@ -1,3 +1,98 @@
-.image {
-  margin: 20px 0;
+.center-image {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background: white;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('/assets/img/logo_noir.png');
+  filter: invert(100%);
+}
+
+.header {
+  width: 100%;
+  z-index: 3;
+  position: relative;
+  height: 64px;
+  p {
+    width: 380px;
+    line-height: 45pt;
+    font-size: 45pt;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+  .menu {
+    position: absolute;
+    left: 380px;
+    top: 0;
+    padding-top: 30px;
+    a {
+      color: black;
+      padding-bottom: 2px;
+      margin-right: 50px;
+    }
+    a:hover,
+    a.active {
+      text-decoration: none;
+      border-bottom: solid 2px black;
+    }
+  }
+  .right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-right: 35px;
+    padding-top: 30px;
+    font-size: 12pt;
+    a {
+      color: black;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  padding-top: 30px;
+  p {
+    padding-top: 0;
+  }
+}
+
+.header-fixed {
+  padding-top: 196px;
+}
+
+.content-wrapper {
+  .content {
+    min-height: 100vh;
+    padding-left: 380px;
+    padding-top: 196px;
+    padding-right: 35px;
+    padding-bottom: 196px;
+  }
+}
+
+.gallery {
+  .image {
+    margin-top: 0;
+  }
+  .image-container {
+    margin: 10px;
+    cursor: pointer;
+  }
+
+  .right-links {
+    position: absolute;
+    right: 35px;
+    top: 196px;
+    a {
+      color: black;
+    }
+  }
 }

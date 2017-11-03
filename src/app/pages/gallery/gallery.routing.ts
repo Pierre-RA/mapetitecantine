@@ -5,9 +5,13 @@ import { ModuleWithProviders } from '@angular/core';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'galerie',
     component: GalleryComponent,
-    data: { animation: 'gallery' }
+    children: [
+      { path: '', redirectTo: 'list', pathMatch: 'full' },
+      { path: 'list', loadChildren: 'app/pages/gallery/list/list.module#ListModule', pathMatch: 'full' },
+      { path: ':slug', loadChildren: 'app/pages/gallery/article/article.module#ArticleModule' }
+    ]
   }
 ];
 
