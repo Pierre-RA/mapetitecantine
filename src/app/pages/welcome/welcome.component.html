@@ -5,9 +5,9 @@
 
 <div>
   <div class="header {{fixed}} {{color}}">
-    <p>
+    <a pageScroll href="#concept" [routerLink]="['/']" class="title">
       ma petite<br />cantine
-    </p>
+    </a>
     <div class="menu">
       <a pageScroll href="#concept" [ngClass]="{'active': color == 'white'}">Concept</a>
       <a pageScroll href="#menu" [ngClass]="{'active': color == 'blue'}">Menu</a>

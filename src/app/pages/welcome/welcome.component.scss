@@ -15,13 +15,17 @@
   z-index: 3;
   position: relative;
   height: 64px;
-  p {
+  .title {
     width: 380px;
     line-height: 45pt;
     font-size: 45pt;
     position: absolute;
     top: 30px;
     left: 30px;
+    color: black;
+  }
+  .title:hover {
+    text-decoration: none;
   }
   .menu {
     position: absolute;
