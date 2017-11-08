@@ -1,8 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Image, Dot } from '../../shared';
-
 @Component({
   selector: 'template-top',
   templateUrl: './top.component.html',
@@ -10,26 +8,14 @@ import { Image, Dot } from '../../shared';
 })
 export class TopComponent implements OnInit {
 
-  @Input() title: string;
-  @Input() left: string;
-  @Input() right: string;
-  @Input() bottom: string;
-  @Input() image: Image;
-  bottomDot: Dot;
+  @Input('fixed') fixed: string;
+  @Input('color') color: string;
 
   constructor(
     private router: Router
   ) {}
 
   ngOnInit() {
-    this.bottomDot = {
-      position: 'bottom',
-      url: this.bottom
-    }
-  }
-
-  goToLink() {
-    this.router.navigate([this.bottom]);
   }
 
 }

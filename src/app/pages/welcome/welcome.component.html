@@ -1,41 +1,13 @@
-<div class="full">
+<div class="full"
+  [@switch]="state"
+  (@switch.done)="changeState($event)"
+  *ngIf="showCover">
   <div class="center-image">
   </div>
 </div>
 
 <div>
-  <div class="header {{fixed}} {{color}}">
-    <a pageScroll href="#concept" [routerLink]="['/']" class="title">
-      ma petite<br />cantine
-    </a>
-    <div class="menu">
-      <a pageScroll href="#concept" [ngClass]="{'active': color == 'white'}">Concept</a>
-      <a pageScroll href="#menu" [ngClass]="{'active': color == 'blue'}">Menu</a>
-      <a pageScroll href="#gallery" [ngClass]="{'active': color == 'mustard'}">Galerie</a>
-      <a pageScroll href="#contact" [ngClass]="{'active': color == 'black'}">Contact</a>
-    </div>
-    <div class="right">
-      <a href="#" target="_blank">
-        <span class="fa-stack">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-        </span>
-      </a>
-      <a href="#" target="_blank">
-        <span class="fa-stack">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-        </span>
-      </a>
-      <a href="#" target="_blank">
-        <span class="fa-stack">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-        </span>
-      </a>
-    </div>
-  </div>
-
+  <template-top [fixed]="fixed" [color]="color"></template-top>
   <div class="content-wrapper">
     <div class="content" #concept id="concept">
       <h1>Concept</h1>
@@ -62,17 +34,13 @@
       <p class="right-links">
         <a [routerLink]="['/galerie']">Voir plus &gt;</a>
       </p>
-      <div class="row">
-        <div class="image-container" (click)="goTo('vernissage')">
-          <div class="image">
-            <img src="http://via.placeholder.com/520x340" alt="520x340" title="galerie" />
-          </div>
-          <p>
-            Vernissage<br />
-            4 octobre 2017
-          </p>
-        </div>
+      <div class="image">
+        <img src="http://via.placeholder.com/520x340" alt="520x340" title="galerie" />
       </div>
+      <p>
+        Vernissage<br />
+        4 octobre 2017
+      </p>
     </div>
 
     <div class="content contact black" #contact id="contact">

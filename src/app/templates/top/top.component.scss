@@ -1,55 +1,57 @@
-@import '~styles.scss';
-
-.title {
-  background-color: inherit;
-  position: fixed;
-  left: 30px;
-  top: 0px;
-  width: 350px;
-  line-height: 45pt;
-  font-size: 45pt;
-  z-index: 1;
-  p {
-    margin-top: 30px;
+.header {
+  width: 100%;
+  z-index: 3;
+  position: relative;
+  height: 86px;
+  .title {
+    width: 380px;
+    line-height: 45pt;
+    font-size: 45pt;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: black;
+  }
+  .title:hover {
+    text-decoration: none;
+  }
+  .menu {
+    position: absolute;
+    left: 380px;
+    top: 0;
+    padding-top: 30px;
+    a {
+      color: black;
+      padding-bottom: 2px;
+      margin-right: 50px;
+    }
+    a:hover,
+    a.active {
+      text-decoration: none;
+      border-bottom: solid 2px black;
+    }
+  }
+  .right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-right: 35px;
+    padding-top: 30px;
+    font-size: 12pt;
+    a {
+      color: black;
+    }
+    a:hover {
+      text-decoration: none;
+    }
   }
 }
 
-.top {
-  height: 100vh;
-  .image {
-    @include vertical-align();
-    width: 100vw;
-    z-index: 2;
-    img {
-      display: block;
-      margin: 0 auto;
-    }
-  }
-  .image-gobelet {
-    img {
-      height: 467px;
-    }
-  }
-  .image-pomme {
-    img {
-      height: 425px;
-    }
-  }
-  .image-carotte {
-    img {
-      height: 653px;
-    }
-  }
-  .image-poule {
-    img {
-      height: 530px;
-    }
-  }
-  h1 {
-    position: absolute;
-    left: 30px;
-    bottom: 10px;
-    z-index: 0;
-    font-size: 45pt;
+.fixed {
+  position: fixed;
+  top: 0;
+  padding-top: 30px;
+  p {
+    padding-top: 0;
   }
 }

@@ -19,10 +19,30 @@
 
   .right-links {
     position: absolute;
-    right: 35px;
-    top: 196px;
+    text-align: right;
+    right: 22px;
+    top: 0;
     a {
       color: black;
     }
+  }
+}
+
+.gallery-width {
+  position: relative;
+  width: 560px;
+}
+
+@media (min-width: 1600px) {
+  .gallery-width {
+    position: relative;
+    width: 1120px;
+  }
+}
+
+@media (min-width: 2200px) {
+  .gallery-width {
+    position: relative;
+    width: 1680px;
   }
 }
