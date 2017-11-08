@@ -1,6 +1,12 @@
-.center-image {
+.full {
   height: 100vh;
   width: 100vw;
+  padding: 10px;
+  background: black;
+}
+.center-image {
+  height: 100%;
+  width: 100%;
   margin: 0;
   background: white;
   background-size: contain;
@@ -14,7 +20,7 @@
   width: 100%;
   z-index: 3;
   position: relative;
-  height: 64px;
+  height: 86px;
   .title {
     width: 380px;
     line-height: 45pt;

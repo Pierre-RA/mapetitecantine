@@ -41,13 +41,13 @@ export class WelcomeComponent implements OnInit {
     }
     if (document.documentElement.scrollTop <=
       window.innerHeight +
-      this.conceptElement.nativeElement.scrollHeight -65
+      this.conceptElement.nativeElement.scrollHeight - 84
     ) {
       this.color = 'white';
     } else if (document.documentElement.scrollTop <=
       window.innerHeight +
       this.conceptElement.nativeElement.scrollHeight +
-      this.menuElement.nativeElement.scrollHeight -65
+      this.menuElement.nativeElement.scrollHeight - 84
     ) {
       this.color = 'blue';
     } else if (
@@ -55,7 +55,7 @@ export class WelcomeComponent implements OnInit {
       window.innerHeight +
       this.conceptElement.nativeElement.scrollHeight +
       this.menuElement.nativeElement.scrollHeight +
-      this.galleryElement.nativeElement.scrollHeight - 65
+      this.galleryElement.nativeElement.scrollHeight - 84
     ) {
       this.color = 'mustard';
     } else {
