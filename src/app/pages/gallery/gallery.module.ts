@@ -5,7 +5,6 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-gallery',
   template: `
-    <h1>Gallery</h1>
     <router-outlet></router-outlet>
   `
 })

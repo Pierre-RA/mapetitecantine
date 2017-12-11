@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
+import { ColorService } from '../../../services/color.service';
 import { GalleryService } from '../gallery.service';
 import { Picture } from '../../../shared';
 
@@ -16,8 +17,11 @@ export class ListComponent implements OnInit {
   sub: Subscription;
 
   constructor(
-    private galleryService: GalleryService
-  ) { }
+    private galleryService: GalleryService,
+    private colorService: ColorService
+  ) {
+    this.colorService.setColor('mustard');
+  }
 
   ngOnInit() {
     this.sub = this.galleryService.getPictureList().subscribe(

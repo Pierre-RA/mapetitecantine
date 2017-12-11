@@ -10,6 +10,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { NotFoundModule } from './pages/not-found/not-found.module';
 import { HeaderModule } from './templates/header/header.module';
 
+import { ColorService } from './services/color.service';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -18,8 +20,8 @@ import { HeaderModule } from './templates/header/header.module';
     BrowserModule.withServerTransition({appId: 'my-app'}),
     HttpClientModule,
     NgxPageScrollModule,
-    HeaderModule,
     NotFoundModule,
+    HeaderModule,
     RouterModule.forRoot([
       { path: '', loadChildren: './pages/landing/landing.module#LandingModule', pathMatch: 'full'},
       { path: 'maintenance', loadChildren: './pages/maintenance/maintenance.module#MaintenanceModule', pathMatch: 'full'},
@@ -28,7 +30,7 @@ import { HeaderModule } from './templates/header/header.module';
       { path: '**', component: NotFoundComponent }
     ])
   ],
-  providers: [],
+  providers: [ColorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

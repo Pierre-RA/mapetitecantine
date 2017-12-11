@@ -2,6 +2,10 @@
 
 header {
   padding: 30px 30px 0 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   .header-left {
     a {
       color: black;
@@ -47,7 +51,7 @@ header {
 @media (min-width: 992px) {
   header {
     .header-left {
-      flex: 0 0 380px;
+      flex: 0 0 350px;
     }
   }
 }
@@ -74,24 +78,4 @@ header {
 }
 .btn-instagram:hover {
   background: $instagram;
-}
-
-.white {
-  background: $white;
-}
-.blue {
-  background: $blue;
-}
-.mustard {
-  background: $mustard;
-}
-.black,
-.neutral {
-  background: $white;
-  filter: invert(100%);
-  .btn-facebook:hover,
-  .btn-twitter:hover,
-  .btn-instagram:hover {
-    filter: invert(100%);
-  }
 }
