@@ -1,0 +1,97 @@
+@import '../../../styles';
+
+header {
+  padding: 30px 30px 0 30px;
+  .header-left {
+    a {
+      color: black;
+      line-height: 45pt;
+      font-size: 45pt;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+  }
+  .header-right {
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline-block;
+      }
+    }
+    .header-menu {
+      a {
+        color: black;
+        padding-bottom: 2px;
+        margin-right: 50px;
+      }
+      a:hover,
+      a.active {
+        text-decoration: none;
+        border-bottom: solid 2px black;
+      }
+    }
+    .header-social {
+      a {
+        color: black;
+      }
+      a:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  header {
+    .header-left {
+      flex: 0 0 380px;
+    }
+  }
+}
+
+.btn-facebook,
+.btn-twitter,
+.btn-instagram {
+  height: 40px;
+  width: 40px;
+  padding-left: 3px;
+  padding-top: 3px;
+  display: inline-block;
+  background: black;
+  border-radius: 100%;
+  i {
+    color: white;
+  }
+}
+.btn-facebook:hover {
+  background: $facebook;
+}
+.btn-twitter:hover {
+  background: $twitter;
+}
+.btn-instagram:hover {
+  background: $instagram;
+}
+
+.white {
+  background: $white;
+}
+.blue {
+  background: $blue;
+}
+.mustard {
+  background: $mustard;
+}
+.black,
+.neutral {
+  background: $white;
+  filter: invert(100%);
+  .btn-facebook:hover,
+  .btn-twitter:hover,
+  .btn-instagram:hover {
+    filter: invert(100%);
+  }
+}
