@@ -21,6 +21,7 @@ header {
       list-style-type: none;
       margin: 0;
       padding: 0;
+      display: inline-block;
       li {
         display: inline-block;
       }
@@ -59,10 +60,11 @@ header {
 .btn-facebook,
 .btn-twitter,
 .btn-instagram {
-  height: 40px;
-  width: 40px;
-  padding-left: 3px;
-  padding-top: 3px;
+  height: 30px;
+  width: 30px;
+  font-size: 20px;
+  padding-left: 2px;
+  padding-top: 2px;
   display: inline-block;
   background: black;
   border-radius: 100%;

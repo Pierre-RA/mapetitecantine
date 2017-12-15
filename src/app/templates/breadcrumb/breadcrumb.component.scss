@@ -1,0 +1,10 @@
+.custom-breadcrumb {
+  a {
+    color: black;
+  }
+  a:hover,
+  a.active {
+    text-decoration: none;
+    border-bottom: solid 2px black;
+  }
+}

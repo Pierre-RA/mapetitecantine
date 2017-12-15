@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { ColorService } from '../../../services/color.service';
+import { GalleryService } from '../gallery.service';
+import { Picture, Link } from '../../../shared';
+
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-item',
@@ -7,9 +14,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemComponent implements OnInit {
 
-  constructor() { }
+  picture: Picture;
+  sub: Subscription;
+  links: Array<Link>;
+
+  constructor(
+    private galleryService: GalleryService,
+    private colorService: ColorService,
+    private activatedRoute: ActivatedRoute
+  ) {
+    this.colorService.setColor('white');
+    this.links = [{
+      name: 'Home',
+      url: '/'
+    }, {
+      name: 'Gallery',
+      url: 'gallery'
+    }];
+  }
 
   ngOnInit() {
+    this.sub = this.galleryService.getPicture(this.activatedRoute.snapshot.params.slug).subscribe(data => {
+      if (data) {
+        this.picture = data;
+        this.picture.acf = {
+          image_1: {
+            url: 'url(\'/assets/img/La_petite_cantine_Ambiance_Salle_Vide.jpg\')'
+          }
+        };
+        console.log(this.picture);
+        this.links.push({
+          name: data.title.rendered
+        });
+      }
+    });
   }
 
 }

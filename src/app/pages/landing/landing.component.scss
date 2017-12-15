@@ -1,0 +1,19 @@
+.wrapper {
+  // min-height: 100%;
+  border-bottom: solid 1px black;
+}
+
+.mustard {
+  .container {
+    position: relative;
+    .right-links {
+      position: absolute;
+      top: 158px;
+      right: 15px;
+      a {
+        color: black;
+      }
+    }
+  }
+}
+

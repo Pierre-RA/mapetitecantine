@@ -1,4 +1,10 @@
-<h2>Gallery list</h2>
-<div *ngFor="let picture of gallery">
-  {{picture.slug}}
+<div class="container">
+  <h2>Gallery</h2>
+
+  <app-breadcrumb [links]="links" class="breadcrumb-right"></app-breadcrumb>
+
+  <div class="row">
+    <app-image [picture]="picture" class="col-md-12 col-xl-6" *ngFor="let picture of gallery"></app-image>
+  </div>
 </div>
+

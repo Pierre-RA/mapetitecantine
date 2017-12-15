@@ -12,7 +12,7 @@ export class NotFoundComponent implements OnInit {
   constructor(
     private colorService: ColorService
   ) {
-    this.colorService.setColor('white');
+    this.colorService.setColor('neutral');
   }
 
   ngOnInit() {

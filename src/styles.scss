@@ -21,22 +21,39 @@ body {
 
 @media (min-width: 992px) {
   .container {
-    max-width: 520px;
+    max-width: 560px;
     margin: 0 auto 0 380px;
     padding-left: 0;
   }
 }
 
+@media (min-width: 1200px) {
+  .container {
+    max-width: 780px;
+    margin: 0 auto 0 380px;
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 1900px) {
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-left: 0;
+  }
+}
+
 .wrapper {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .container {
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 158px;
 }
 
-.white {
+.white,
+.neutral {
   background: $white;
 }
 .blue {
@@ -45,8 +62,7 @@ body {
 .mustard {
   background: $mustard;
 }
-.black,
-.neutral {
+.black {
   background: $white;
   filter: invert(100%);
   .btn-facebook:hover,

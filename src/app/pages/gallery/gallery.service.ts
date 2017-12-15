@@ -5,6 +5,7 @@ import { environment } from '../../../environments/environment';
 import { Picture } from '../../shared';
 
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class GalleryService {
@@ -14,11 +15,17 @@ export class GalleryService {
   constructor(private http: HttpClient) { }
 
   getPictureList(): Observable<Array<Picture>> {
-    return this.http.get<Array<Picture>>(this.wpBase + 'posts?categories=galerie');
+    return this.http.get<Array<Picture>>(this.wpBase + 'posts?categories=1');
   }
 
   getPicture(slug: string): Observable<Picture> {
-    return this.http.get<Picture>(this.wpBase + `posts?slug=${slug}`);
+    return this.http.get<Picture>(this.wpBase + `posts?slug=${slug}`)
+      .map(data => data[0]);
+  }
+
+  getLastPicture(): Observable<Picture> {
+    return this.http.get<Picture>(this.wpBase + 'posts?categories=1&orderby=date&order=desc&per_page=1')
+      .map(data => data[0]);
   }
 
 }
