@@ -1,5 +1,5 @@
 <div class="image" *ngIf="picture" (click)="goToLink()">
-  <img [src]="picture.acf.image.url" *ngIf="picture.acf && picture.acf.image && picture.acf.image.url" title="galerie" />
+  <img [src]="picture.acf.image.sizes.large" *ngIf="picture.acf && picture.acf.image && picture.acf.image.sizes && picture.acf.image.sizes.large" title="galerie" />
   <p>
     {{picture.title.rendered}}<br>
     {{picture.date | date:'longDate'}}

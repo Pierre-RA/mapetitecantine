@@ -1,9 +1,17 @@
 .image {
+  position: absolute;
   width: 100vw;
-  margin-left: -380px;
   height: 50vh;
-  margin-bottom: 20px;
+  top: 213px;
+  left: 0;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+.pre-image {
+  background: silver;
+  width: 100%;
+  height: 50vh;
+  margin-bottom: 20px;
 }

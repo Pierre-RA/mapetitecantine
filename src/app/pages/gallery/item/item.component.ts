@@ -28,8 +28,8 @@ export class ItemComponent implements OnInit {
       name: 'Home',
       url: '/'
     }, {
-      name: 'Gallery',
-      url: 'gallery'
+      name: 'Galerie',
+      url: '/galerie'
     }];
   }
 

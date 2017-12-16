@@ -26,7 +26,7 @@ export class ListComponent implements OnInit {
       name: 'Home',
       url: '/'
     }, {
-      name: 'Gallery',
+      name: 'Galerie',
       url: '/galerie'
     }];
   }

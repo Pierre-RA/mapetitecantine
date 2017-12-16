@@ -19,6 +19,10 @@ body {
   height: 100%;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+  color: black;
+}
+
 @media (min-width: 992px) {
   .container {
     max-width: 560px;
@@ -43,8 +47,17 @@ body {
   }
 }
 
-.wrapper {
+.app-wrapper {
   min-height: 100vh;
+}
+
+.app-wrapper.black {
+  filter: invert(0%);
+  .btn-facebook:hover,
+  .btn-twitter:hover,
+  .btn-instagram:hover {
+    filter: invert(0%);
+  }
 }
 
 .container {

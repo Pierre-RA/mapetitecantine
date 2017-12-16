@@ -29,6 +29,7 @@ export class LandingComponent implements OnInit {
     private galleryService: GalleryService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
+    this.colorService.setColor('white');
     this.sub = this.galleryService.getLastPicture().subscribe(data => {
       this.picture = data;
     });

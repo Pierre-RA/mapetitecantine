@@ -50,6 +50,17 @@ header {
   }
 }
 
+// @media (min-width: 768px) {
+//   header {
+//     .header-left {
+//       a {
+//         line-height: 45pt;
+//         font-size: 45pt;
+//       }
+//     }
+//   }
+// }
+
 @media (min-width: 992px) {
   header {
     .header-left {
