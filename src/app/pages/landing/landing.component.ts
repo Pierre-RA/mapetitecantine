@@ -31,11 +31,6 @@ export class LandingComponent implements OnInit {
   ) {
     this.sub = this.galleryService.getLastPicture().subscribe(data => {
       this.picture = data;
-      this.picture.acf = {
-        image_1: {
-          url: '/assets/img/La_petite_cantine_Ambiance_Salle_Vide.jpg'
-        }
-      };
     });
   }
 
@@ -66,7 +61,7 @@ export class LandingComponent implements OnInit {
     } else if (window.scrollY <=
       // window.innerHeight +
       this.conceptElement.nativeElement.scrollHeight - 158 +
-      this.menuElement.nativeElement.scrollHeight - 158
+      this.menuElement.nativeElement.scrollHeight
     ) {
       if (this.color !== 'blue') {
         this.colorService.setColor('blue');
@@ -76,8 +71,8 @@ export class LandingComponent implements OnInit {
       window.scrollY <=
       // window.innerHeight +
       this.conceptElement.nativeElement.scrollHeight - 158 +
-      this.menuElement.nativeElement.scrollHeight - 158 +
-      this.galleryElement.nativeElement.scrollHeight - 158
+      this.menuElement.nativeElement.scrollHeight +
+      this.galleryElement.nativeElement.scrollHeight
     ) {
       if (this.color !== 'mustard') {
         this.colorService.setColor('mustard');

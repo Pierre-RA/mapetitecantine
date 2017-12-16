@@ -37,12 +37,6 @@ export class ItemComponent implements OnInit {
     this.sub = this.galleryService.getPicture(this.activatedRoute.snapshot.params.slug).subscribe(data => {
       if (data) {
         this.picture = data;
-        this.picture.acf = {
-          image_1: {
-            url: 'url(\'/assets/img/La_petite_cantine_Ambiance_Salle_Vide.jpg\')'
-          }
-        };
-        console.log(this.picture);
         this.links.push({
           name: data.title.rendered
         });

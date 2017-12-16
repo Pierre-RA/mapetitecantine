@@ -12,7 +12,7 @@ export interface Picture {
   id: number;
   slug: string;
   acf: {
-    image_1: {
+    image: {
       alt?: string;
       title?: string;
       url: string;
