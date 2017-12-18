@@ -18,6 +18,7 @@
   height: 100vh;
   width: 100vw;
   padding: 5%;
+  background: black;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -29,6 +30,6 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url('/assets/img/logo_noir.png');
+    background-image: url('/assets/img/logo_blanc.png');
   }
 }
