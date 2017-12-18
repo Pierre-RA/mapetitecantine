@@ -1,7 +1,7 @@
-<p class="custom-breadcrumb">
-  <span *ngFor="let link of links, let i = index">
-    <ng-container *ngIf="i > 0">&gt;</ng-container>
-    <a [routerLink]="link.url" *ngIf="link.url">{{link.name}}</a>
-    <ng-container *ngIf=!link.url>{{link.name}}</ng-container>
-  </span>
-</p>
+<div class="custom-breadcrumb">
+  <div *ngFor="let link of links, let i = index">
+    <span *ngIf="i > 0">&gt;</span>
+    <a [routerLink]="link.url" [innerHTML]="link.name" *ngIf="link.url"></a>
+    <span [innerHTML]="link.name" *ngIf="!link.url"></span>
+  </div>
+</div>

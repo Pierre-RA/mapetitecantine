@@ -6,7 +6,7 @@
   </div>
   <div class="image" [ngStyle]="{'background-image': 'url(' + picture.acf.image.sizes.large + ')'}" *ngIf="picture && picture.acf && picture.acf.image && picture.acf.image.sizes && picture.acf.image.sizes.large"></div>
   <div class="container" *ngIf="picture">
-    <h1>{{picture.title.rendered}}</h1>
+    <h1 [innerHTML]="picture.title.rendered"></h1>
     <div class="text-justify" [innerHTML]="picture.content.rendered"></div>
   </div>
 </div>

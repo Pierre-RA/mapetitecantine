@@ -23,7 +23,7 @@ export class ItemComponent implements OnInit {
     private galleryService: GalleryService,
     private activatedRoute: ActivatedRoute
   ) {
-    this.color = 'white';
+    this.color = 'neutral';
     this.fixed = true;
     this.links = [{
       name: 'Home',
