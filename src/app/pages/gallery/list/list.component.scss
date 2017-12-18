@@ -7,6 +7,14 @@
   }
 }
 
+@media (min-width: 2500px) {
+  .container {
+    .breadcrumb-right {
+      right: 395px;
+    }
+  }
+}
+
 .ch-100 {
   min-height: 100%;
 }
