@@ -2,9 +2,9 @@ import { Component, OnInit, OnDestroy, HostListener, ViewChild, Inject } from '@
 import { PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
-import { Picture } from '../../shared';
+import { Page, Picture } from '../../shared';
 
-import { ColorService } from '../../services/color.service';
+import { PageService } from './page.service';
 import { GalleryService } from '../gallery/gallery.service';
 
 import { Subscription } from 'rxjs/Subscription';
@@ -21,17 +21,33 @@ export class LandingComponent implements OnInit {
   @ViewChild('galerie') galleryElement;
   @ViewChild('contact') contactElement;
   color: string;
+  fixed: boolean;
   picture: Picture;
   sub: Subscription;
+  conceptSub: Subscription;
+  menuSub: Subscription;
+  conceptPage: string;
+  menuPage: string;
 
   constructor(
-    private colorService: ColorService,
+    private pageService: PageService,
     private galleryService: GalleryService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
-    this.colorService.setColor('white');
+    this.color = 'white';
+    this.fixed = false;
     this.sub = this.galleryService.getLastPicture().subscribe(data => {
       this.picture = data;
+    });
+    this.conceptSub = this.pageService.getPage('concept').subscribe(data => {
+      if (data && data.content) {
+        this.conceptPage = data.content.rendered;
+      }
+    });
+    this.menuSub = this.pageService.getPage('menu').subscribe(data => {
+      if (data && data.content) {
+        this.menuPage = data.content.rendered;
+      }
     });
   }
 
@@ -39,51 +55,40 @@ export class LandingComponent implements OnInit {
   }
 
   OnDestroy() {
-    if (this.sub) {
-      this.sub.unsubscribe();
-    }
+    this.sub.unsubscribe();
+    this.conceptSub.unsubscribe();
+    this.menuSub.unsubscribe();
   }
 
   setScroll() {
-    // if (window.scrollY >= window.innerHeight) {
-    //   this.fixed = 'fixed';
-    //   this.removeCover();
-    // } else {
-    //   this.fixed = '';
-    // }
-    if (window.scrollY <=
-      // window.innerHeight +
+    if (window.scrollY <= window.innerHeight) {
+      this.color = 'white';
+      this.fixed = false;
+    } else if (window.scrollY <=
+      window.innerHeight +
       this.conceptElement.nativeElement.scrollHeight - 158
     ) {
-      if (this.color !== 'white') {
-        this.colorService.setColor('white');
-      }
       this.color = 'white';
+      this.fixed = true;
     } else if (window.scrollY <=
-      // window.innerHeight +
+      window.innerHeight +
       this.conceptElement.nativeElement.scrollHeight - 158 +
       this.menuElement.nativeElement.scrollHeight
     ) {
-      if (this.color !== 'blue') {
-        this.colorService.setColor('blue');
-      }
       this.color = 'blue';
+      this.fixed = true;
     } else if (
       window.scrollY <=
-      // window.innerHeight +
+      window.innerHeight +
       this.conceptElement.nativeElement.scrollHeight - 158 +
       this.menuElement.nativeElement.scrollHeight +
       this.galleryElement.nativeElement.scrollHeight
     ) {
-      if (this.color !== 'mustard') {
-        this.colorService.setColor('mustard');
-      }
       this.color = 'mustard';
+      this.fixed = true;
     } else {
-      if (this.color !== 'black') {
-        this.colorService.setColor('black');
-      }
       this.color = 'black';
+      this.fixed = true;
     }
   }
 

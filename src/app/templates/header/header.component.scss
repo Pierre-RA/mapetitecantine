@@ -2,10 +2,6 @@
 
 header {
   padding: 30px 30px 0 30px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   z-index: 1000;
   .header-left {
     a {
@@ -50,16 +46,12 @@ header {
   }
 }
 
-// @media (min-width: 768px) {
-//   header {
-//     .header-left {
-//       a {
-//         line-height: 45pt;
-//         font-size: 45pt;
-//       }
-//     }
-//   }
-// }
+header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
 
 @media (min-width: 992px) {
   header {

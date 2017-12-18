@@ -1,20 +1,20 @@
-<header class="row" [ngClass]="color">
+<header class="row" [ngClass]="{'fixed': fixed, 'white': color == 'white', 'blue': color == 'blue', 'mustard': color == 'mustard', 'black': color == 'black', 'neutral': color == 'neutral'}">
   <div class="col header-left">
     <h1><a routerLink="/">ma petite<br>cantine</a></h1>
   </div>
   <div class="col header-right d-none d-sm-block">
     <ul class="header-menu">
       <li>
-        <a pageScroll href="#concept" [ngClass]="{'active': color == 'white'}">Concept</a>
+        <a pageScroll href="#concept" routerLink="" [ngClass]="{'active': color == 'white'}">Concept</a>
       </li>
       <li>
-        <a pageScroll href="#menu" [ngClass]="{'active': color == 'blue'}">Menu</a>
+        <a pageScroll href="#menu" routerLink="" [ngClass]="{'active': color == 'blue'}">Menu</a>
       </li>
       <li>
-        <a pageScroll href="#galerie" [ngClass]="{'active': color == 'mustard'}">Galerie</a>
+        <a pageScroll href="#galerie" routerLink="" [ngClass]="{'active': color == 'mustard'}">Galerie</a>
       </li>
       <li>
-        <a pageScroll href="#contact" [ngClass]="{'active': color == 'black'}">Contact</a>
+        <a pageScroll href="#contact" routerLink="" [ngClass]="{'active': color == 'black'}">Contact</a>
       </li>
     </ul>
     <ul class="header-social">

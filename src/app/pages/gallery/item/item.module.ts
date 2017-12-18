@@ -5,11 +5,13 @@ import { RouterModule } from '@angular/router';
 import { ItemComponent } from './item.component';
 import { GalleryService } from '../gallery.service';
 import { BreadcrumbModule } from '../../../templates/breadcrumb/breadcrumb.module';
+import { HeaderModule } from '../../../templates/header/header.module';
 
 @NgModule({
   imports: [
     CommonModule,
     BreadcrumbModule,
+    HeaderModule,
     RouterModule.forChild([
       { path: '', component: ItemComponent }
     ])

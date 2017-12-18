@@ -6,6 +6,7 @@ import { TitleComponent } from './title.component';
   imports: [
     CommonModule
   ],
-  declarations: [TitleComponent]
+  declarations: [TitleComponent],
+  exports: [TitleComponent]
 })
 export class TitleModule { }

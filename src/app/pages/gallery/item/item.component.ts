@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { ColorService } from '../../../services/color.service';
 import { GalleryService } from '../gallery.service';
 import { Picture, Link } from '../../../shared';
 
@@ -17,13 +16,15 @@ export class ItemComponent implements OnInit {
   picture: Picture;
   sub: Subscription;
   links: Array<Link>;
+  color: string;
+  fixed: boolean;
 
   constructor(
     private galleryService: GalleryService,
-    private colorService: ColorService,
     private activatedRoute: ActivatedRoute
   ) {
-    this.colorService.setColor('white');
+    this.color = 'white';
+    this.fixed = true;
     this.links = [{
       name: 'Home',
       url: '/'

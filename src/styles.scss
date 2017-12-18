@@ -47,8 +47,8 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
-.app-wrapper {
-  min-height: 100vh;
+.pad-top {
+  padding-top: 158px;
 }
 
 .app-wrapper.black {
@@ -58,11 +58,6 @@ h1, h2, h3, h4, h5, h6, p {
   .btn-instagram:hover {
     filter: invert(0%);
   }
-}
-
-.container {
-  min-height: 100vh;
-  padding-top: 158px;
 }
 
 .white,

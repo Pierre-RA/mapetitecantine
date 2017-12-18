@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 
@@ -9,8 +10,11 @@ import { AppComponent } from './app.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { NotFoundModule } from './pages/not-found/not-found.module';
 import { HeaderModule } from './templates/header/header.module';
+import { TitleModule } from './templates/title/title.module';
 
-import { ColorService } from './services/color.service';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr-CH';
+registerLocaleData(localeFr);
 
 @NgModule({
   declarations: [
@@ -18,10 +22,12 @@ import { ColorService } from './services/color.service';
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
+    BrowserAnimationsModule,
     HttpClientModule,
     NgxPageScrollModule,
     NotFoundModule,
     HeaderModule,
+    TitleModule,
     RouterModule.forRoot([
       { path: '', loadChildren: './pages/landing/landing.module#LandingModule', pathMatch: 'full'},
       { path: 'maintenance', loadChildren: './pages/maintenance/maintenance.module#MaintenanceModule', pathMatch: 'full'},
@@ -31,7 +37,9 @@ import { ColorService } from './services/color.service';
       { path: '**', component: NotFoundComponent }
     ])
   ],
-  providers: [ColorService],
+  providers: [{
+    provide: LOCALE_ID, useValue: 'fr-CH'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

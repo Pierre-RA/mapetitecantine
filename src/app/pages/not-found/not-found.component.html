@@ -1,14 +1,17 @@
-<div class="container">
+<app-header [color]="color" [fixed]="fixed"></app-header>
+<div class="container h-100">
   <div class="row">
     <div class="col-sm-12 my-auto">
-      <h1>404 Page not found</h1>
+      <h1>
+        Erreur 404 :
+        <span class="text-muted">Page non trouvée</span>
+      </h1>
       <p>
-        Oops, the requested page does not exist.
+        Oups, la page demandée n'existe pas.
       </p>
       <p>
-        <a routerLink="/">Back to index</a>
+        <a routerLink="/">Retour à l'index</a>.
       </p>
     </div>
   </div>
 </div>
-

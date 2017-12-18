@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ColorService } from '../../services/color.service';
-
 @Component({
   selector: 'app-not-found',
   templateUrl: './not-found.component.html',
@@ -9,10 +7,12 @@ import { ColorService } from '../../services/color.service';
 })
 export class NotFoundComponent implements OnInit {
 
-  constructor(
-    private colorService: ColorService
-  ) {
-    this.colorService.setColor('neutral');
+  color: string;
+  fixed: boolean;
+
+  constructor() {
+    this.color = 'neutral';
+    this.fixed = true;
   }
 
   ngOnInit() {

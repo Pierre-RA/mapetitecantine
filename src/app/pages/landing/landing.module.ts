@@ -4,18 +4,23 @@ import { RouterModule } from '@angular/router';
 
 import { LandingComponent } from './landing.component';
 import { ImageModule } from '../../templates/image/image.module';
+import { TitleModule } from '../../templates/title/title.module';
+import { HeaderModule } from '../../templates/header/header.module';
 
 import { GalleryService } from '../gallery/gallery.service';
+import { PageService } from './page.service';
 
 @NgModule({
   imports: [
     CommonModule,
     ImageModule,
+    TitleModule,
+    HeaderModule,
     RouterModule.forChild([
       { path: '', component: LandingComponent, pathMatch: 'full'}
     ])
   ],
   declarations: [LandingComponent],
-  providers: [GalleryService]
+  providers: [GalleryService, PageService]
 })
 export class LandingModule { }

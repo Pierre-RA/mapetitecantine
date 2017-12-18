@@ -1,8 +1,12 @@
-<div class="container" *ngIf="picture">
-  <app-breadcrumb [links]="links"></app-breadcrumb>
-  <div class="pre-image"></div>
-  <h1>{{picture.title.rendered}}</h1>
-  <div class="text-justify" [innerHTML]="picture.content.rendered"></div>
-</div>
+<app-header [color]="color" [fixed]="fixed"></app-header>
 
-<div class="image" [ngStyle]="{'background-image': 'url(' + picture.acf.image.sizes.large + ')'}" *ngIf="picture && picture.acf && picture.acf.image && picture.acf.image.sizes && picture.acf.image.sizes.large"></div>
+<div class="white h-100">
+  <div class="container pad-top">
+    <app-breadcrumb [links]="links"></app-breadcrumb>
+  </div>
+  <div class="image" [ngStyle]="{'background-image': 'url(' + picture.acf.image.sizes.large + ')'}" *ngIf="picture && picture.acf && picture.acf.image && picture.acf.image.sizes && picture.acf.image.sizes.large"></div>
+  <div class="container" *ngIf="picture">
+    <h1>{{picture.title.rendered}}</h1>
+    <div class="text-justify" [innerHTML]="picture.content.rendered"></div>
+  </div>
+</div>

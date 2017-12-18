@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import { ColorService } from '../../../services/color.service';
 import { GalleryService } from '../gallery.service';
 import { Picture, Link } from '../../../shared';
 
@@ -16,12 +15,14 @@ export class ListComponent implements OnInit {
   gallery: Array<Picture>;
   sub: Subscription;
   links: Array<Link>;
+  color: string;
+  fixed: boolean;
 
   constructor(
-    private galleryService: GalleryService,
-    private colorService: ColorService
+    private galleryService: GalleryService
   ) {
-    this.colorService.setColor('mustard');
+    this.color = 'mustard';
+    this.fixed = true;
     this.links = [{
       name: 'Home',
       url: '/'

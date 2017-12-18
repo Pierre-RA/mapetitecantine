@@ -14,9 +14,6 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    // if (!this.color) {
-    //   this.color = 'neutral';
-    // }
   }
 
 }
