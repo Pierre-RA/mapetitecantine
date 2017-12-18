@@ -55,9 +55,15 @@ export class LandingComponent implements OnInit {
   }
 
   OnDestroy() {
-    this.sub.unsubscribe();
-    this.conceptSub.unsubscribe();
-    this.menuSub.unsubscribe();
+    if (this.sub) {
+      this.sub.unsubscribe();
+    }
+    if (this.conceptSub) {
+      this.conceptSub.unsubscribe();
+    }
+    if (this.menuSub) {
+      this.menuSub.unsubscribe();
+    }
   }
 
   setScroll() {

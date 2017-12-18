@@ -31,8 +31,8 @@ registerLocaleData(localeFr);
     RouterModule.forRoot([
       { path: '', loadChildren: './pages/landing/landing.module#LandingModule', pathMatch: 'full'},
       { path: 'maintenance', loadChildren: './pages/maintenance/maintenance.module#MaintenanceModule', pathMatch: 'full'},
-      { path: 'gallery', loadChildren: './pages/gallery/gallery.module#GalleryModule', pathMatch: 'full'},
-      { path: 'galerie', loadChildren: './pages/gallery/gallery.module#GalleryModule', pathMatch: 'full'},
+      { path: 'gallery', loadChildren: './pages/gallery/list/list.module#ListModule', pathMatch: 'full'},
+      { path: 'galerie', loadChildren: './pages/gallery/list/list.module#ListModule', pathMatch: 'full'},
       { path: 'galerie/:slug', loadChildren: './pages/gallery/item/item.module#ItemModule'},
       { path: '**', component: NotFoundComponent }
     ])

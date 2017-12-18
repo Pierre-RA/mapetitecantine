@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import {
   trigger,
   state,
@@ -6,6 +6,8 @@ import {
   animate,
   transition
 } from '@angular/animations';
+import { PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
 @Component({
   selector: 'app-title',
@@ -36,7 +38,7 @@ export class TitleComponent implements OnInit {
 
   state: string;
 
-  constructor() {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this.state = '0';
   }
 
@@ -44,6 +46,12 @@ export class TitleComponent implements OnInit {
   }
 
   changeState(event): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.alternateState(event);
+    }
+  }
+
+  alternateState(event): void {
     const transitionTiming = 1000;
     switch (event.toState) {
       case '0':

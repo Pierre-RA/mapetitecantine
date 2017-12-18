@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { NgxPageScrollModule } from 'ngx-page-scroll';
 
 import { ItemComponent } from './item.component';
 import { GalleryService } from '../gallery.service';
@@ -12,6 +13,7 @@ import { HeaderModule } from '../../../templates/header/header.module';
     CommonModule,
     BreadcrumbModule,
     HeaderModule,
+    NgxPageScrollModule,
     RouterModule.forChild([
       { path: '', component: ItemComponent }
     ])
