@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 
 import { FacebookFeed, FacebookPost } from '../../../shared';
 import { FacebookService } from '../facebook.service';
@@ -12,14 +12,19 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class FeedComponent implements OnInit, OnDestroy {
 
-  feed: FacebookFeed;
+  feed: Array<FacebookPost>;
   feedSub: Subscription;
+  isLoaded: boolean;
+  @Input('limit') limit: number;
 
   constructor(
     private facebookService: FacebookService
   ) {
+    this.isLoaded = false;
     this.feedSub = this.facebookService.getFeed().subscribe(data => {
-      console.log(data);
+      this.isLoaded = true;
+      this.feed = data;
+      console.log(this.feed);
     });
   }
 

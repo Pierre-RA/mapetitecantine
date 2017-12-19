@@ -52,7 +52,21 @@ app.get('/api/', (req, res) => {
 app.get('/api/feed', (req, res) => {
   request({
     method: 'GET',
-    uri: 'https://graph.facebook.com/' + pageId + '/feed?access_token=' + fbToken,
+    uri: 'https://graph.facebook.com/' + pageId +
+      '/feed?fields=fan_count,name,id,link,picture&locale=fr_FR&access_token=' + fbToken,
+    json: true
+  }).then(data => {
+    res.json(data);
+  }).catch(err => {
+    res.status(400).json(err);
+  });
+});
+
+app.get('/api/feed/self', (req, res) => {
+  request({
+    method: 'GET',
+    uri: 'https://graph.facebook.com/' + pageId +
+      '?fields=created_time,message,story,admin_creator,id,caption,full_picture&locale=fr_FR&access_token=' + fbToken,
     json: true
   }).then(data => {
     res.json(data);
@@ -65,7 +79,7 @@ app.get('/api/feed/:id', (req, res) => {
   request({
     method: 'GET',
     uri: 'https://graph.facebook.com/' + req.params.id +
-      '?fields=description,full_picture,picture,story,created_time&access_token=' + fbToken,
+      '?fields=actions,description,full_picture,picture,story,created_time&access_token=' + fbToken,
     json: true
   }).then(data => {
     res.json(data);

@@ -5,6 +5,7 @@ import { FacebookFeed, FacebookPost } from '../../shared';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/filter';
 
 @Injectable()
 export class FacebookService {
@@ -18,8 +19,9 @@ export class FacebookService {
     this.url = 'http://demo6112386.mockable.io/feed';
   }
 
-  getFeed(): Observable<FacebookFeed> {
-    return this.http.get<FacebookFeed>(this.url);
+  getFeed() {
+    return this.http.get<FacebookFeed>(this.url)
+      .map(res => res.data.filter(post => post.link));
   }
 
   getFeedPost(id): Observable<FacebookPost> {
