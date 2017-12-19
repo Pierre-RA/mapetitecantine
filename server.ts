@@ -6,6 +6,7 @@ import { enableProdMode } from '@angular/core';
 import * as express from 'express';
 import { join } from 'path';
 import { readFileSync } from 'fs';
+import * as request from 'request-promise';
 
 // Faster server renders w/ Prod mode (dev mode never needed)
 enableProdMode();
@@ -38,9 +39,27 @@ app.engine('html', ngExpressEngine({
 app.set('view engine', 'html');
 app.set('views', join(DIST_FOLDER, 'browser'));
 
-/* - Example Express Rest API endpoints -
-  app.get('/api/**', (req, res) => { });
-*/
+// Express Rest API endpoints
+const fbToken = process.env.FACEBOOK_TOKEN || '';
+const pageId = process.env.FACEBOOK_PAGE_ID || '';
+app.get('/api/', (req, res) => {
+  res.json({
+    message: 'Simple API'
+  });
+});
+
+app.get('/api/feed', (req, res) => {
+  request({
+    method: 'GET',
+    uri: 'https://graph.facebook.com/' + pageId +
+      '/feed?fields=created_time,message,story,full_picture,link&locale=fr_CH&access_token=' + fbToken,
+    json: true
+  }).then(data => {
+    res.json(data);
+  }).catch(err => {
+    res.status(400).json(err);
+  });
+});
 
 // Server static files from /browser
 app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {

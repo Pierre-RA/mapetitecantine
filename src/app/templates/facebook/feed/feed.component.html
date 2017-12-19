@@ -1,0 +1,23 @@
+<ng-container *ngIf="feed">
+  <div *ngFor="let post of feed" class="my-5">
+    <h3>
+      <ng-container *ngIf="post.story">{{post.story}}</ng-container>
+      <span class="text-muted">{{post.created_time | date:'longDate'}}</span>
+    </h3>
+    <p *ngIf="post.message">
+      {{post.message}}
+    </p>
+    <a [href]="post.link" *ngIf="post.full_picture">
+      <img [src]="post.full_picture" class="w-100">
+    </a>
+    <p class="mt-1 text-center">
+      <a [href]="post.link" target="_blank">
+        <i class="fa fa-external-link"></i>
+        lire sur facebook
+      </a>
+    </p>
+  </div>
+</ng-container>
+<div *ngIf="!isLoaded" class="text-center mt-5">
+  <i class="fa fa-2x fa-spinner fa-pulse"></i>
+</div>
