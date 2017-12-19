@@ -13,26 +13,26 @@ import { isPlatformBrowser, isPlatformServer } from '@angular/common';
   selector: 'app-title',
   templateUrl: './title.component.html',
   styleUrls: ['./title.component.scss'],
-  animations: [
-  trigger('switch', [
-    state('0', style({
-      backgroundColor: 'white',
-      filter: 'invert(0%)'
-    })),
-    state('1', style({
-      backgroundColor: 'rgb(78, 220, 202)',
-      filter: 'invert(0%)'
-    })),
-    state('2', style({
-      backgroundColor: 'rgb(255, 201, 21)',
-      filter: 'invert(0%)'
-    })),
-    state('3', style({
-      backgroundColor: 'white',
-      filter: 'invert(100%)'
-    })),
-  ])
-]
+//   animations: [
+//   trigger('switch', [
+//     state('0', style({
+//       backgroundColor: 'white',
+//       filter: 'invert(0%)'
+//     })),
+//     state('1', style({
+//       backgroundColor: 'rgb(78, 220, 202)',
+//       filter: 'invert(0%)'
+//     })),
+//     state('2', style({
+//       backgroundColor: 'rgb(255, 201, 21)',
+//       filter: 'invert(0%)'
+//     })),
+//     state('3', style({
+//       backgroundColor: 'white',
+//       filter: 'invert(100%)'
+//     })),
+//   ])
+// ]
 })
 export class TitleComponent implements OnInit {
 
@@ -46,9 +46,9 @@ export class TitleComponent implements OnInit {
   }
 
   changeState(event): void {
-    if (isPlatformBrowser(this.platformId)) {
-      this.alternateState(event);
-    }
+    // if (isPlatformBrowser(this.platformId)) {
+    //   this.alternateState(event);
+    // }
   }
 
   alternateState(event): void {

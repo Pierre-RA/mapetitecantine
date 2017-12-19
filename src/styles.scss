@@ -47,6 +47,16 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
+@media (min-width: 2500px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding-left: 380px;
+    padding-right: 380px;
+  }
+}
+
 .pad-top {
   padding-top: 158px;
 }
