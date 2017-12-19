@@ -1,15 +1,35 @@
+// .title {
+//   height: 100vh;
+//   width: 100vw;
+//   padding: 10px;
+//   background: black;
+//   .center-image {
+//     height: 100%;
+//     width: 100%;
+//     margin: 0;
+//     background-size: contain;
+//     background-repeat: no-repeat;
+//     background-position: center;
+//     background-image: url('/assets/img/logo_noir.png');
+//   }
+// }
+
 .title {
   height: 100vh;
   width: 100vw;
-  padding: 10px;
+  padding: 6%;
   background: black;
-  .center-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('/assets/img/ambiance_salle.jpg');
+  .inner {
     height: 100%;
     width: 100%;
     margin: 0;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url('/assets/img/logo_noir.png');
+    background-image: url('/assets/img/logo_blanc.png');
   }
 }
