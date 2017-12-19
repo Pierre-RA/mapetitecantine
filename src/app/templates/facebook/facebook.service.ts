@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { FacebookFeed, FacebookPost } from '../../shared';
+import { environment } from '../../../environments/environment';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -15,8 +16,7 @@ export class FacebookService {
   constructor(
     private http: HttpClient
   ) {
-    // this.url = '/api/feed';
-    this.url = 'http://demo6112386.mockable.io/feed';
+    this.url = environment.facebookUrl;
   }
 
   getFeed() {

@@ -40,9 +40,8 @@ app.set('view engine', 'html');
 app.set('views', join(DIST_FOLDER, 'browser'));
 
 // Express Rest API endpoints
-const fbToken = 'EAAW5eOtT3B0BAO2DhcIlz2HjQfnZCZAoo6Kbr7nLWNwXFHrXqIigYhDGObZAJUYg8Gfz1856hnBEmK5cUq2uPYCwxuXfNZBHS2dRhgJBDJkCZB614ormsIX' +
-  'iKTDj2D4txcjLV8lzjjoc1WcT62J8FRxFeoN3r0i9rB9rOSzLQpVsnwTK4Sp6o3CZAK2V9fy6oZD';
-const pageId = '1289349467835561';
+const fbToken = process.env.FACEBOOK_TOKEN || '';
+const pageId = process.env.FACEBOOK_PAGE_ID || '';
 app.get('/api/', (req, res) => {
   res.json({
     message: 'Simple API'
