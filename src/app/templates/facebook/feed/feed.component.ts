@@ -24,7 +24,9 @@ export class FeedComponent implements OnInit, OnDestroy {
     this.feedSub = this.facebookService.getFeed().subscribe(data => {
       this.isLoaded = true;
       this.feed = data;
-      console.log(this.feed);
+      if (this.limit) {
+        this.feed = this.feed.slice(0, this.limit);
+      }
     });
   }
 
