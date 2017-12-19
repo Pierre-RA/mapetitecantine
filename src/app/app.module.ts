@@ -34,6 +34,8 @@ registerLocaleData(localeFr);
       { path: 'gallery', loadChildren: './pages/gallery/list/list.module#ListModule', pathMatch: 'full'},
       { path: 'galerie', loadChildren: './pages/gallery/list/list.module#ListModule', pathMatch: 'full'},
       { path: 'galerie/:slug', loadChildren: './pages/gallery/item/item.module#ItemModule'},
+      { path: 'actualites', loadChildren: './pages/facebook/facebook.module#FacebookModule', pathMatch: 'full' },
+      { path: 'news', loadChildren: './pages/facebook/facebook.module#FacebookModule', pathMatch: 'full' },
       { path: '**', component: NotFoundComponent }
     ])
   ],

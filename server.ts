@@ -6,6 +6,7 @@ import { enableProdMode } from '@angular/core';
 import * as express from 'express';
 import { join } from 'path';
 import { readFileSync } from 'fs';
+import * as request from 'request-promise';
 
 // Faster server renders w/ Prod mode (dev mode never needed)
 enableProdMode();
@@ -38,9 +39,41 @@ app.engine('html', ngExpressEngine({
 app.set('view engine', 'html');
 app.set('views', join(DIST_FOLDER, 'browser'));
 
-/* - Example Express Rest API endpoints -
-  app.get('/api/**', (req, res) => { });
-*/
+// Express Rest API endpoints
+const fbToken = 'EAAW5eOtT3B0BAO2DhcIlz2HjQfnZCZAoo6Kbr7nLWNwXFHrXqIigYhDGObZAJUYg8Gfz1856hnBEmK5cUq2uPYCwxuXfNZBHS2dRhgJBDJkCZB614ormsIX' +
+  'iKTDj2D4txcjLV8lzjjoc1WcT62J8FRxFeoN3r0i9rB9rOSzLQpVsnwTK4Sp6o3CZAK2V9fy6oZD';
+const pageId = '1289349467835561';
+app.get('/api/', (req, res) => {
+  res.json({
+    message: 'Simple API'
+  });
+});
+
+app.get('/api/feed', (req, res) => {
+  request({
+    method: 'GET',
+    uri: 'https://graph.facebook.com/' + pageId + '/feed?access_token=' + fbToken,
+    json: true
+  }).then(data => {
+    res.json(data);
+  }).catch(err => {
+    res.status(400).json(err);
+  });
+});
+
+app.get('/api/feed/:id', (req, res) => {
+  request({
+    method: 'GET',
+    uri: 'https://graph.facebook.com/' + req.params.id +
+      '?fields=description,full_picture,picture,story,created_time&access_token=' + fbToken,
+    json: true
+  }).then(data => {
+    res.json(data);
+  }).catch(err => {
+    res.status(400).json(err);
+  });
+});
+
 
 // Server static files from /browser
 app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
