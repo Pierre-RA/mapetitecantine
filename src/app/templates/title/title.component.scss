@@ -1,7 +1,7 @@
 .title {
   height: 100vh;
   width: 100vw;
-  padding: 4%;
+  padding: 10px;
   .inner {
     height: 100%;
     width: 100%;
@@ -10,6 +10,12 @@
     background-repeat: no-repeat;
     background-position: center;
     background-image: url('/assets/img/logo_blanc.png');
+  }
+}
+
+@media (min-width: 768px) {
+  .title {
+    padding: 60px;
   }
 }
 

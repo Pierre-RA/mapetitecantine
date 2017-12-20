@@ -13,5 +13,8 @@ export const environment = {
     lat: 46.1673246,
     lng: 6.1054392,
     zoom: 14
-  }
+  },
+  facebookLink: 'https://www.facebook.com/Ma-petite-cantine-1289349467835561/',
+  twitterLink: 'https://www.facebook.com/Ma-petite-cantine-1289349467835561/',
+  instagramLink: 'https://www.facebook.com/Ma-petite-cantine-1289349467835561/',
 };

@@ -49,6 +49,7 @@ app.get('/api/', (req, res) => {
 });
 
 app.get('/api/feed', (req, res) => {
+  console.log(fbToken, pageId);
   request({
     method: 'GET',
     uri: 'https://graph.facebook.com/' + pageId +

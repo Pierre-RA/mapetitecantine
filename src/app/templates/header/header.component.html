@@ -1,4 +1,50 @@
-<header class="row" [ngClass]="{'fixed': fixed, 'white': color == 'white', 'blue': color == 'blue', 'mustard': color == 'mustard', 'black': color == 'black', 'neutral': color == 'neutral'}">
+<header [ngClass]="color">
+  <div class="header-title">
+    <h1><a routerLink="/">ma petite<br>cantine</a></h1>
+  </div>
+  <div class="header-menu-small">
+    <button class="btn btn-link" (click)="toggleMenu()">
+      <i class="fa fa-bars"></i>
+    </button>
+  </div>
+  <div class="header-dropdown" [ngClass]="color" *ngIf="showMenu">
+    <ul>
+      <li>
+        <a routerLink="" fragment="actualite" [ngClass]="{'active': color == 'white'}" (click)="toggleMenu()">Actualité</a>
+      </li>
+      <li>
+        <a routerLink="" fragment="concept" [ngClass]="{'active': color == 'blue'}" (click)="toggleMenu()">Concept</a>
+      </li>
+      <li>
+        <a routerLink="" fragment="produits" [ngClass]="{'active': color == 'mustard'}" (click)="toggleMenu()">Nos produits</a>
+      </li>
+      <li>
+        <a routerLink="" fragment="contact" [ngClass]="{'active': color == 'black'}" (click)="toggleMenu()">Contact</a>
+      </li>
+    </ul>
+  </div>
+  <div class="header-menu">
+    <ul>
+      <li>
+        <a routerLink="" fragment="actualite" [ngClass]="{'active': color == 'white'}" (click)="toggleMenu()">Actualité</a>
+      </li>
+      <li>
+        <a routerLink="" fragment="concept" [ngClass]="{'active': color == 'blue'}" (click)="toggleMenu()">Concept</a>
+      </li>
+      <li>
+        <a routerLink="" fragment="produits" [ngClass]="{'active': color == 'mustard'}" (click)="toggleMenu()">Nos produits</a>
+      </li>
+      <li>
+        <a routerLink="" fragment="contact" [ngClass]="{'active': color == 'black'}" (click)="toggleMenu()">Contact</a>
+      </li>
+    </ul>
+  </div>
+  <div class="header-social">
+    <app-social [color]="color"></app-social>
+  </div>
+</header>
+
+<!-- <header class="row" [ngClass]="{'color': color}">
   <div class="col header-left">
     <h1><a routerLink="/">ma petite<br>cantine</a></h1>
   </div>
@@ -35,4 +81,4 @@
       </li>
     </ul>
   </div>
-</header>
+</header> -->

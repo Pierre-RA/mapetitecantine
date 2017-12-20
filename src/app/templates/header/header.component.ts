@@ -9,11 +9,17 @@ export class HeaderComponent implements OnInit {
 
   @Input('fixed') fixed: string;
   @Input('color') color: string;
+  showMenu: boolean;
 
   constructor() {
+    this.showMenu = false;
   }
 
   ngOnInit() {
+  }
+
+  toggleMenu() {
+    this.showMenu = ! this.showMenu;
   }
 
 }
