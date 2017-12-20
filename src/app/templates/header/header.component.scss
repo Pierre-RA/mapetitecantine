@@ -45,7 +45,8 @@ header {
       padding-top: 15px;
     }
     .inner-social {
-      text-align: center;
+      text-align: left;
+      padding-left: 15px;
     }
   }
   .header-menu {
@@ -60,6 +61,11 @@ header.black {
   a,
   button {
     color: white;
+  }
+  ul {
+    .active {
+      border-bottom: solid 2px white;
+    }
   }
 }
 
@@ -89,6 +95,7 @@ header.black {
           display: inline-block;
           width: 170px;
           a:hover {
+            text-decoration: none;
             border-bottom: solid 2px black;
           }
         }
@@ -149,6 +156,7 @@ header.black {
       }
     }
     .header-social {
+      margin: 0 auto;
       max-width: 1140px;
     }
   }

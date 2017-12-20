@@ -21,7 +21,33 @@
 <div class="mustard produits" #produits>
   <div class="container pb-5">
     <h1>Produits</h1>
-    <div class="text-justify" [innerHtml]="menuPage" *ngIf="menuPage"></div>
+    <div class="text-justify" [innerHtml]="menuPage.content.rendered" *ngIf="menuPage && menuPage.content && menuPage.content.rendered"></div>
+    <div class="row" *ngIf="menuPage">
+      <div class="col-xs-12 col-sm-6" *ngIf="menuPage.acf.image_haut_gauche">
+        <img [src]="menuPage.acf.image_haut_gauche.sizes.large" class="w-100">
+        <p *ngIf="menuPage.acf.texte_haut_gauche">
+          {{menuPage.acf.texte_haut_gauche}}
+        </p>
+      </div>
+      <div class="col-xs-12 col-sm-6" *ngIf="menuPage.acf.image_haut_droite">
+        <img [src]="menuPage.acf.image_haut_droite.sizes.large" class="w-100">
+        <p *ngIf="menuPage.acf.texte_haut_droite">
+          {{menuPage.acf.texte_haut_droite}}
+        </p>
+      </div>
+      <div class="col-xs-12 col-sm-6" *ngIf="menuPage.acf.image_bas_gauche">
+        <img [src]="menuPage.acf.image_bas_gauche.sizes.large" class="w-100">
+        <p *ngIf="menuPage.acf.texte_bas_gauche">
+          {{menuPage.acf.texte_bas_gauche}}
+        </p>
+      </div>
+      <div class="col-xs-12 col-sm-6" *ngIf="menuPage.acf.image_bas_droite">
+        <img [src]="menuPage.acf.image_bas_droite.sizes.large" class="w-100">
+        <p *ngIf="menuPage.acf.texte_bas_droite">
+          {{menuPage.acf.texte_bas_droite}}
+        </p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -45,7 +71,7 @@
         </span>
       </div>
       <div class="col-xs-12 col-sm-6">
-        <br>
+        <br class="d-none d-sm-block">
         <span itemprop="openingHours" dateTime="Mo,Tu,We,Th,Fr 7:00-15:30">
           7h &ndash; 15h30<br>
           Du lundi au vendredi

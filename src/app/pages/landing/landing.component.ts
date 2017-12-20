@@ -30,7 +30,7 @@ export class LandingComponent implements OnInit {
   conceptSub: Subscription;
   menuSub: Subscription;
   conceptPage: string;
-  menuPage: string;
+  menuPage: Page;
   lat: number;
   lng: number;
   zoom: number;
@@ -62,8 +62,9 @@ export class LandingComponent implements OnInit {
       }
     });
     this.menuSub = this.pageService.getPage('menu').subscribe(data => {
-      if (data && data.content) {
-        this.menuPage = data.content.rendered;
+      if (data) {
+        this.menuPage = data;
+        console.log(this.menuPage);
       }
     });
   }
