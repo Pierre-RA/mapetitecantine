@@ -6,7 +6,6 @@ import { environment } from '../../../environments/environment';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/filter';
 
 @Injectable()
 export class FacebookService {
@@ -19,7 +18,7 @@ export class FacebookService {
     this.url = environment.facebookUrl;
   }
 
-  getFeed() {
+  getFeed(): Observable<Array<FacebookPost>> {
     return this.http.get<FacebookFeed>(this.url)
       .map(res => res.data.filter(post => post.link));
   }

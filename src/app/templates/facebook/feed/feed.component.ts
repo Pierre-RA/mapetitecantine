@@ -27,6 +27,8 @@ export class FeedComponent implements OnInit, OnDestroy {
       if (this.limit) {
         this.feed = this.feed.slice(0, this.limit);
       }
+    }, err => {
+      this.isLoaded = true;
     });
   }
 

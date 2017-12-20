@@ -1,28 +1,7 @@
-// .title {
-//   height: 100vh;
-//   width: 100vw;
-//   padding: 10px;
-//   background: black;
-//   .center-image {
-//     height: 100%;
-//     width: 100%;
-//     margin: 0;
-//     background-size: contain;
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     background-image: url('/assets/img/logo_noir.png');
-//   }
-// }
-
 .title {
   height: 100vh;
   width: 100vw;
-  padding: 6%;
-  background: black;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image: url('/assets/img/ambiance_salle.jpg');
+  padding: 4%;
   .inner {
     height: 100%;
     width: 100%;
@@ -32,4 +11,16 @@
     background-position: center;
     background-image: url('/assets/img/logo_blanc.png');
   }
+}
+
+.title.image {
+  background: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('/assets/img/ambiance_salle.jpg');
+}
+
+.title.black {
+  background: black;
 }

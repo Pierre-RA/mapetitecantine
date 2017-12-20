@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, HostListener, ViewChild, Inject } from '@
 import { PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { Meta } from '@angular/platform-browser';
 
 import { Page, Picture } from '../../shared';
 
@@ -33,19 +34,25 @@ export class LandingComponent implements OnInit {
   lat: number;
   lng: number;
   zoom: number;
+  isBlack: boolean;
 
   constructor(
     private pageService: PageService,
     private galleryService: GalleryService,
     private activatedRoute: ActivatedRoute,
+    private meta: Meta,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
+    this.isBlack = false;
     this.color = 'white';
     this.showHeader = false;
     this.lat = environment.address.lat;
     this.lng = environment.address.lng;
     this.zoom = environment.address.zoom;
-    console.log(this.activatedRoute.snapshot);
+    this.meta.addTag({ name: 'og:type', content: 'website' });
+    this.meta.addTag({ name: 'og:title', content: 'ma petite cantine' });
+    this.meta.addTag({ name: 'og:url', content: 'https://mapetitecantine.ch/' });
+    this.meta.addTag({ name: 'og:image', content: '/assets/img/ambiance_salle.jpg' });
     this.sub = this.galleryService.getLastPicture().subscribe(data => {
       this.picture = data;
     });
@@ -62,6 +69,17 @@ export class LandingComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (
+      this.activatedRoute.snapshot.queryParams &&
+      this.activatedRoute.snapshot.queryParams['black']
+    ) {
+      this.isBlack = true;
+    }
+    if (isPlatformBrowser(this.platformId)) {
+      this.activatedRoute.fragment.subscribe(fragment => {
+        this.scrollTo(fragment);
+      });
+    }
   }
 
   OnDestroy() {
@@ -76,24 +94,59 @@ export class LandingComponent implements OnInit {
     }
   }
 
+  scrollTo(fragment: string) {
+    if (fragment === 'actualite') {
+      window.scrollTo(
+        0,
+        window.innerHeight + 1
+      );
+    }
+    if (fragment === 'concept') {
+      window.scrollTo(
+        0,
+        window.innerHeight +
+        this.actualiteElement.nativeElement.scrollHeight
+      );
+    }
+    if (fragment === 'produits') {
+      window.
+      window.scrollTo(
+        0,
+        window.innerHeight +
+        this.actualiteElement.nativeElement.scrollHeight +
+        this.conceptElement.nativeElement.scrollHeight
+      );
+    }
+    if (fragment === 'contact') {
+      window.
+      window.scrollTo(
+        0,
+        window.innerHeight +
+        this.actualiteElement.nativeElement.scrollHeight +
+        this.conceptElement.nativeElement.scrollHeight +
+        this.produitsElement.nativeElement.scrollHeight
+      );
+    }
+  }
+
   setScroll() {
     if (window.scrollY <= window.innerHeight) {
       this.color = 'white';
       this.showHeader = false;
-    } else if (window.scrollY <=
+    } else if (window.scrollY <
       window.innerHeight +
       this.actualiteElement.nativeElement.scrollHeight
     ) {
       this.color = 'white';
       this.showHeader = true;
-    } else if (window.scrollY <=
+    } else if (window.scrollY <
       window.innerHeight +
       this.actualiteElement.nativeElement.scrollHeight +
       this.conceptElement.nativeElement.scrollHeight - 158
     ) {
       this.color = 'blue';
       this.showHeader = true;
-    } else if (window.scrollY <=
+    } else if (window.scrollY <
       window.innerHeight +
       this.actualiteElement.nativeElement.scrollHeight +
       this.conceptElement.nativeElement.scrollHeight +

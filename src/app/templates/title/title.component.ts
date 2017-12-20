@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Input } from '@angular/core';
 import {
   trigger,
   state,
@@ -36,6 +36,7 @@ import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 })
 export class TitleComponent implements OnInit {
 
+  @Input('isBlack') isBlack: boolean;
   state: string;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {

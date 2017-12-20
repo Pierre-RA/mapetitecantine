@@ -1,4 +1,4 @@
-<app-title></app-title>
+<app-title [isBlack]="isBlack"></app-title>
 <app-header [color]="color" fixed="true" *ngIf="showHeader"></app-header>
 
 <div class="white actualite" #actualite>
@@ -12,7 +12,7 @@
 </div>
 
 <div class="blue concept" #concept>
-  <div class="container" [ngClass]="{'fixed': fixed, 'free': !fixed}">
+  <div class="container">
     <h1>Concept</h1>
     <div class="text-justify" [innerHTML]="conceptPage" *ngIf="conceptPage"></div>
   </div>
@@ -40,8 +40,8 @@
         1228 Plan-les-Ouates
       </span>
       <span itemprop="openingHours" dateTime="Mo,Tu,We,Th,Fr 7:00-15:30">
-        <!-- 7h &ndash; 15h30<br />
-        Du lundi au vendredi -->
+        7h &ndash; 15h30<br />
+        Du lundi au vendredi
       </span>
       <span itemprop="telephone">
         <a href="tel:+41788834590">+41 78 883 45 90</a>

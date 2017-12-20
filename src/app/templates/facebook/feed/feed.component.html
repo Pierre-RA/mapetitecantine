@@ -15,3 +15,6 @@
 <div *ngIf="!isLoaded" class="text-center mt-5">
   <i class="fa fa-2x fa-spinner fa-pulse"></i>
 </div>
+<div *ngIf="isLoaded && !feed" class="text-center mt-5">
+  Aucun fil d'actualité pour l'instant.
+</div>
