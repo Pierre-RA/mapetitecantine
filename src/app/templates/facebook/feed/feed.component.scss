@@ -6,3 +6,11 @@ a.active {
   text-decoration: none;
   border-bottom: solid 2px black;
 }
+
+.feed-caption {
+  padding-top: 5px;
+}
+
+@media (min-width: 768px) {
+  padding-top: 15px;
+}

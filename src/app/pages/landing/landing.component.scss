@@ -1,7 +1,15 @@
 .container {
-  padding-top: 200px;
+  padding-top: 15px;
   padding-bottom: 15px;
   min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-top: 200px;
+    padding-bottom: 15px;
+    min-height: 100vh;
+  }
 }
 
 /* ACTUALITE */
@@ -9,11 +17,20 @@
   .container {
     position: relative;
     .right-links {
-      position: absolute;
-      top: 200px;
-      right: 15px;
       a {
         color: black;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .actualite {
+    .container {
+      .right-links {
+        position: absolute;
+        top: 200px;
+        right: 15px;
       }
     }
   }
@@ -27,16 +44,6 @@
       }
     }
   }
-}
-
-/* CONCEPT */
-.concept {
-  // .container.free {
-  //   padding-top: 42px;
-  // }
-  // .container.fixed {
-  //   padding-top: 200px;
-  // }
 }
 
 /* GALERIE */
@@ -84,6 +91,12 @@
   a.active {
     text-decoration: none;
     border-bottom: solid 2px white;
+  }
+}
+
+@media (min-width: 768px) {
+  .business {
+    padding-top: 15px;
   }
 }
 

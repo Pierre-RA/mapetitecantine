@@ -1,8 +1,6 @@
 header {
-  padding: 15px 15px 0 15px;
-  position: fixed;
   z-index: 1000;
-  height: 158px;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -18,9 +16,7 @@ header {
     }
   }
   .header-title {
-    position: absolute;
-    top: 15px;
-    left: 15px;
+    display: none;
     a:hover {
       text-decoration: none;
     }
@@ -29,6 +25,7 @@ header {
     position: absolute;
     top: 15px;
     right: 15px;
+    z-index: 1002;
     button {
       font-size: 30pt;
     }
@@ -36,22 +33,26 @@ header {
   .header-dropdown {
     z-index: 1001;
     position: absolute;
-    top: 110px;
+    top: 0;
     left: 0;
     right: 0;
+    h1 {
+      padding-top: 15px;
+      padding-left: 15px;
+    }
     ul {
       padding-left: 15px;
+      padding-top: 15px;
+    }
+    .inner-social {
+      text-align: center;
     }
   }
   .header-menu {
     display: none;
   }
   .header-social {
-    position: absolute;
-    top: 110px;
-    left: 0;
-    right: 0;
-    text-align: center;
+    display: none;
   }
 }
 
@@ -65,7 +66,10 @@ header.black {
 @media (min-width: 768px) {
   header {
     padding: 30px 30px 0 30px;
+    height: 158px;
     .header-title {
+      display: block;
+      position: absolute;
       top: 30px;
       left: 30px;
       h1 {
@@ -91,8 +95,12 @@ header.black {
       }
     }
     .header-social {
+      display: block;
+      position: absolute;
+      top: 110px;
+      text-align: center;
       left: auto;
-      right: 30px;
+      right: 39px;
     }
   }
 }

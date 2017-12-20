@@ -31,24 +31,29 @@
     <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" class="map">
       <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
     </agm-map>
-    <p class="business" itemscope itemtype="http://schema.org/LocalBusiness">
-      <span itemprop="name">
-        ma petite cantine
-      </span>
-      <span itemprop="address">
-        5 Chemin du Pré-Fleuri<br />
-        1228 Plan-les-Ouates
-      </span>
-      <span itemprop="openingHours" dateTime="Mo,Tu,We,Th,Fr 7:00-15:30">
-        7h &ndash; 15h30<br />
-        Du lundi au vendredi
-      </span>
-      <span itemprop="telephone">
-        <a href="tel:+41788834590">+41 78 883 45 90</a>
-      </span>
-      <span itemprop="email">
-        <a href="mailto:info@mapetitecantine.ch">info@mapetitecantine.ch</a>
-      </span>
-    </p>
+    <div class="business row" itemscope itemtype="http://schema.org/LocalBusiness">
+      <div class="col-xs-12 col-sm-6">
+        <span itemprop="name">
+          ma petite cantine
+        </span>
+        <span itemprop="address">
+          5 Chemin du Pré-Fleuri<br>
+          1228 Plan-les-Ouates
+        </span>
+        <span itemprop="telephone">
+          <a href="tel:+41788834590">+41 78 883 45 90</a>
+        </span>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <br>
+        <span itemprop="openingHours" dateTime="Mo,Tu,We,Th,Fr 7:00-15:30">
+          7h &ndash; 15h30<br>
+          Du lundi au vendredi
+        </span>
+        <span itemprop="email">
+          <a href="mailto:info@mapetitecantine.ch">info@mapetitecantine.ch</a>
+        </span>
+      </div>
+    </div>
   </div>
 </div>

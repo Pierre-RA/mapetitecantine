@@ -3,7 +3,7 @@
     <a [href]="post.link" *ngIf="post.full_picture">
       <img [src]="post.full_picture" class="w-100">
     </a>
-    <p class="mt-1">
+    <p class="feed-caption">
       <ng-container *ngIf="post.story">{{post.story}}<br></ng-container>
       <ng-container>{{post.created_time | date:'longDate'}}</ng-container>
       <ng-container *ngIf="post.message">
