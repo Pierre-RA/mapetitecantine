@@ -8,6 +8,7 @@ import { LandingComponent } from './landing.component';
 import { ImageModule } from '../../templates/image/image.module';
 import { TitleModule } from '../../templates/title/title.module';
 import { HeaderModule } from '../../templates/header/header.module';
+import { FeedModule } from '../../templates/facebook/feed/feed.module';
 
 import { GalleryService } from '../gallery/gallery.service';
 import { PageService } from './page.service';
@@ -18,6 +19,7 @@ import { PageService } from './page.service';
     ImageModule,
     TitleModule,
     HeaderModule,
+    FeedModule,
     AgmCoreModule,
     RouterModule.forChild([
       { path: '', component: LandingComponent, pathMatch: 'full'}

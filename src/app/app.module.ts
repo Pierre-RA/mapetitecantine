@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
@@ -26,7 +25,6 @@ registerLocaleData(localeFr);
     BrowserModule.withServerTransition({appId: 'my-app'}),
     BrowserAnimationsModule,
     HttpClientModule,
-    NgxPageScrollModule,
     NotFoundModule,
     HeaderModule,
     TitleModule,
@@ -39,7 +37,7 @@ registerLocaleData(localeFr);
       { path: 'gallery', loadChildren: './pages/gallery/list/list.module#ListModule', pathMatch: 'full'},
       { path: 'galerie', loadChildren: './pages/gallery/list/list.module#ListModule', pathMatch: 'full'},
       { path: 'galerie/:slug', loadChildren: './pages/gallery/item/item.module#ItemModule'},
-      { path: 'actualites', loadChildren: './pages/facebook/facebook.module#FacebookModule', pathMatch: 'full' },
+      { path: 'actualite', loadChildren: './pages/facebook/facebook.module#FacebookModule', pathMatch: 'full' },
       { path: 'news', loadChildren: './pages/facebook/facebook.module#FacebookModule', pathMatch: 'full' },
       { path: '**', component: NotFoundComponent }
     ])

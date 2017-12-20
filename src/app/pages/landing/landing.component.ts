@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, HostListener, ViewChild, Inject } from '@angular/core';
 import { PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 import { Page, Picture } from '../../shared';
 
@@ -17,12 +18,12 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class LandingComponent implements OnInit {
 
+  @ViewChild('actualite') actualiteElement;
   @ViewChild('concept') conceptElement;
-  @ViewChild('menu') menuElement;
-  @ViewChild('galerie') galleryElement;
+  @ViewChild('produits') produitsElement;
   @ViewChild('contact') contactElement;
   color: string;
-  fixed: boolean;
+  showHeader: boolean;
   picture: Picture;
   sub: Subscription;
   conceptSub: Subscription;
@@ -36,13 +37,15 @@ export class LandingComponent implements OnInit {
   constructor(
     private pageService: PageService,
     private galleryService: GalleryService,
+    private activatedRoute: ActivatedRoute,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     this.color = 'white';
-    this.fixed = false;
+    this.showHeader = false;
     this.lat = environment.address.lat;
     this.lng = environment.address.lng;
     this.zoom = environment.address.zoom;
+    console.log(this.activatedRoute.snapshot);
     this.sub = this.galleryService.getLastPicture().subscribe(data => {
       this.picture = data;
     });
@@ -76,32 +79,31 @@ export class LandingComponent implements OnInit {
   setScroll() {
     if (window.scrollY <= window.innerHeight) {
       this.color = 'white';
-      this.fixed = false;
+      this.showHeader = false;
     } else if (window.scrollY <=
       window.innerHeight +
-      this.conceptElement.nativeElement.scrollHeight - 158
+      this.actualiteElement.nativeElement.scrollHeight
     ) {
       this.color = 'white';
-      this.fixed = true;
+      this.showHeader = true;
     } else if (window.scrollY <=
       window.innerHeight +
-      this.conceptElement.nativeElement.scrollHeight - 158 +
-      this.menuElement.nativeElement.scrollHeight
+      this.actualiteElement.nativeElement.scrollHeight +
+      this.conceptElement.nativeElement.scrollHeight - 158
     ) {
       this.color = 'blue';
-      this.fixed = true;
-    } else if (
-      window.scrollY <=
+      this.showHeader = true;
+    } else if (window.scrollY <=
       window.innerHeight +
-      this.conceptElement.nativeElement.scrollHeight - 158 +
-      this.menuElement.nativeElement.scrollHeight +
-      this.galleryElement.nativeElement.scrollHeight
+      this.actualiteElement.nativeElement.scrollHeight +
+      this.conceptElement.nativeElement.scrollHeight +
+      this.produitsElement.nativeElement.scrollHeight - 158
     ) {
       this.color = 'mustard';
-      this.fixed = true;
+      this.showHeader = true;
     } else {
       this.color = 'black';
-      this.fixed = true;
+      this.showHeader = true;
     }
   }
 

@@ -4,18 +4,8 @@
   min-height: 100vh;
 }
 
-/* CONCEPT */
-#concept {
-  .container.free {
-    padding-top: 42px;
-  }
-  .container.fixed {
-    padding-top: 200px;
-  }
-}
-
-/* GALERIE */
-#galerie {
+/* ACTUALITE */
+.actualite {
   .container {
     position: relative;
     .right-links {
@@ -30,7 +20,42 @@
 }
 
 @media (min-width: 2500px) {
-  #galerie {
+  .actualite {
+    .container {
+      .right-links {
+        right: 395px;
+      }
+    }
+  }
+}
+
+/* CONCEPT */
+.concept {
+  // .container.free {
+  //   padding-top: 42px;
+  // }
+  // .container.fixed {
+  //   padding-top: 200px;
+  // }
+}
+
+/* GALERIE */
+.galerie {
+  .container {
+    position: relative;
+    .right-links {
+      position: absolute;
+      top: 200px;
+      right: 15px;
+      a {
+        color: black;
+      }
+    }
+  }
+}
+
+@media (min-width: 2500px) {
+  .galerie {
     .container {
       .right-links {
         right: 395px;
@@ -40,7 +65,7 @@
 }
 
 /* CONTACT */
-#contact {
+.contact {
   .container {
     .business {
       span {

@@ -1,31 +1,31 @@
 <app-title></app-title>
-<app-header [color]="color" [fixed]="fixed"></app-header>
+<app-header [color]="color" fixed="true" *ngIf="showHeader"></app-header>
 
-<div class="white" #concept id="concept">
+<div class="white actualite" #actualite>
+  <div class="container">
+    <h1>Actualité</h1>
+    <p class="right-links">
+      <a [routerLink]="['/actualite']">Voir plus &gt;</a>
+    </p>
+    <app-facebook-feed limit="1"></app-facebook-feed>
+  </div>
+</div>
+
+<div class="blue concept" #concept>
   <div class="container" [ngClass]="{'fixed': fixed, 'free': !fixed}">
     <h1>Concept</h1>
     <div class="text-justify" [innerHTML]="conceptPage" *ngIf="conceptPage"></div>
   </div>
 </div>
 
-<div class="blue" #menu id="menu">
+<div class="mustard produits" #produits>
   <div class="container">
-    <h1>Menu</h1>
+    <h1>Produits</h1>
     <div class="text-justify" [innerHtml]="menuPage" *ngIf="menuPage"></div>
   </div>
 </div>
 
-<div class="mustard" #galerie id="galerie">
-  <div class="container">
-    <h1>Galerie</h1>
-    <p class="right-links">
-      <a [routerLink]="['/galerie']">Voir plus &gt;</a>
-    </p>
-    <app-image [picture]="picture"></app-image>
-  </div>
-</div>
-
-<div class="black" #contact id="contact">
+<div class="black contact" #contact id="contact">
   <div class="container">
     <h1>Contact</h1>
     <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" class="map">
