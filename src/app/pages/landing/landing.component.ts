@@ -6,6 +6,7 @@ import { Page, Picture } from '../../shared';
 
 import { PageService } from './page.service';
 import { GalleryService } from '../gallery/gallery.service';
+import { environment } from '../../../environments/environment';
 
 import { Subscription } from 'rxjs/Subscription';
 
@@ -28,6 +29,9 @@ export class LandingComponent implements OnInit {
   menuSub: Subscription;
   conceptPage: string;
   menuPage: string;
+  lat: number;
+  lng: number;
+  zoom: number;
 
   constructor(
     private pageService: PageService,
@@ -36,6 +40,9 @@ export class LandingComponent implements OnInit {
   ) {
     this.color = 'white';
     this.fixed = false;
+    this.lat = environment.address.lat;
+    this.lng = environment.address.lng;
+    this.zoom = environment.address.zoom;
     this.sub = this.galleryService.getLastPicture().subscribe(data => {
       this.picture = data;
     });

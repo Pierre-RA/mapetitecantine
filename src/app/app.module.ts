@@ -5,12 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgxPageScrollModule } from 'ngx-page-scroll';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { NotFoundModule } from './pages/not-found/not-found.module';
 import { HeaderModule } from './templates/header/header.module';
 import { TitleModule } from './templates/title/title.module';
+import { environment } from '../environments/environment';
 
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr-CH';
@@ -28,6 +30,9 @@ registerLocaleData(localeFr);
     NotFoundModule,
     HeaderModule,
     TitleModule,
+    AgmCoreModule.forRoot({
+      apiKey: environment.GOOGLE_API_KEY
+    }),
     RouterModule.forRoot([
       { path: '', loadChildren: './pages/landing/landing.module#LandingModule', pathMatch: 'full'},
       { path: 'maintenance', loadChildren: './pages/maintenance/maintenance.module#MaintenanceModule', pathMatch: 'full'},

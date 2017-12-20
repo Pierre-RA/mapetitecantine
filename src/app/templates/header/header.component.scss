@@ -85,3 +85,53 @@ header.fixed {
 .btn-instagram:hover {
   background: $instagram;
 }
+
+.black {
+  .header-left {
+    a {
+      color: white;
+    }
+  }
+  .header-right {
+    .header-menu {
+      a {
+        color: white;
+      }
+      a:hover,
+      a.active {
+        border-bottom: solid 2px white;
+      }
+    }
+    .header-social {
+      a {
+        color: white;
+      }
+    }
+  }
+  .btn-facebook,
+  .btn-twitter,
+  .btn-instagram {
+    background: white;
+    i {
+      color: black;
+    }
+  }
+  .btn-facebook:hover {
+    background: $facebook;
+    i {
+      color: white;
+    }
+  }
+  .btn-twitter:hover {
+    background: $twitter;
+    i {
+      color: white;
+    }
+  }
+  .btn-instagram:hover {
+    background: $instagram;
+    i {
+      color: white;
+    }
+  }
+}

@@ -20,7 +20,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, p {
-  color: black;
+  color: $black;
 }
 
 @media (min-width: 992px) {
@@ -61,14 +61,17 @@ h1, h2, h3, h4, h5, h6, p {
   padding-top: 158px;
 }
 
-.app-wrapper.black {
-  filter: invert(0%);
-  .btn-facebook:hover,
-  .btn-twitter:hover,
-  .btn-instagram:hover {
-    filter: invert(0%);
-  }
-}
+// .app-wrapper.black {
+//   filter: invert(0%);
+//   .btn-facebook:hover,
+//   .btn-twitter:hover,
+//   .btn-instagram:hover {
+//     filter: invert(0%);
+//   }
+//   .map {
+//     filter: invert(0%);
+//   }
+// }
 
 .white,
 .neutral {
@@ -81,12 +84,10 @@ h1, h2, h3, h4, h5, h6, p {
   background: $mustard;
 }
 .black {
-  background: $white;
-  filter: invert(100%);
-  .btn-facebook:hover,
-  .btn-twitter:hover,
-  .btn-instagram:hover {
-    filter: invert(100%);
+  background: $black;
+  color: $white;
+  h1, h2, h3, h4, h5, h6, p {
+    color: $white;
   }
 }
 
