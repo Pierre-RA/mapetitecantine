@@ -20,8 +20,8 @@
     "webpack:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:prerender": "cd dist/browser && http-server",
     "serve:ssr": "node dist/server",
-    "pm2:prerender": "pm2 dist/server",
-    "pm2:ssr": "pm2 dist/server"
+    "pm2:prerender": "pm2 start dist/server",
+    "pm2:ssr": "pm2 start dist/server"
   },
   "private": true,
   "dependencies": {
